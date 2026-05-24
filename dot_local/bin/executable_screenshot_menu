@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+options="󰒉 Selection\n󰹑 Active Window\n󰍹 Entire Screen"
+choice=$(echo -e "$options" | fuzzel --dmenu -p "Screenshot Menu       " --width 20 --lines 3)
+
+case "$choice" in
+    *Selection)   mode="region" ;;
+    *Window)      mode="window" ;;
+    *Screen)      mode="output" ;;
+    *)            exit 0        ;;
+esac
+
+dir="$HOME/Pictures/Screenshots"
+name="$(date +'%d-%m-%Y-%H-%M-%S').png"
+
+hyprshot -m "$mode" -o "$dir" -f "$name"
+

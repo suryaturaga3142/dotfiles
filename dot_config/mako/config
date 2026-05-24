@@ -1,0 +1,35 @@
+# ~/.config/mako/config
+
+anchor=top-right
+layer=overlay
+default-timeout=1000
+ignore-timeout=0
+max-visible=5
+sort=-time
+
+width=350
+height=150
+margin=12
+padding=12
+border-radius=12
+border-size=2
+
+[urgency=critical]
+anchor=center
+default-timeout=5000
+border-color=#dd0f0f
+
+[app-name=vol_bright_adj]
+anchor=top-center
+default-timeout=500
+width=250
+height=30
+padding=1
+border-size=1
+border-radius=6
+font="JetBrainsMono Nerd Font 16"
+
+[app-name=Hyprshot]
+on-button-left=exec gimp "$HOME/Pictures/Screenshots/$(ls -t $HOME/Pictures/Screenshots/ | head -n 1)" & makoctl dismiss -n "$id"
+on-button-right=dismiss
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#img_dir="$HOME/Pictures/wallpapers/animegirl"
+img_dir="$HOME/Pictures/wallpapers/animeblack"
+#img_dir="$HOME/Pictures/wallpapers/cyberpunkcycle"
+#img_dir="$HOME/Pictures/wallpapers/city"
+#img_dir="/usr/share/wallpapers"
+
+IMG=$(find "$img_dir" -type f \( \
+    -iname "*.jpg" -o \
+    -iname "*.jpeg" -o \
+    -iname "*.png" -o \
+    -iname "*.webp" \
+\) | shuf -n 1)
+
+awww img "$IMG" --transition-type fade --transition-duration 3
+

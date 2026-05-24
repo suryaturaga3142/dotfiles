@@ -1,0 +1,59 @@
+#!/bin/bash
+
+lockfile=/tmp/vol_bright.lck
+notif_file=/tmp/vol_bright.log
+
+(
+    flock -x 200
+
+
+    [[ ! -s "$notif_file" ]] && echo "0" >| "$notif_file"
+    notif_id=$(<"$notif_file")
+    notif_id=${notif_id:-0}
+
+    get_brightness() {
+        echo "$(( $(brightnessctl g) * 100 / $(brightnessctl m) ))"
+    }
+
+    level=0
+    hdr="Volume"
+
+    case "$1" in
+        vol_up)
+            pamixer -i 5
+            level=$(pamixer --get-volume)
+            hdr="󰝝 "
+            ;;
+        vol_down)
+            pamixer -d 5
+            level=$(pamixer --get-volume)
+            hdr="󰝞 "
+            if [ "$(pamixer --get-volume)" = 0 ]; then
+                hdr="󰝟 "
+            fi
+            ;;
+        vol_mute)
+            pamixer -t
+            if [ "$(pamixer --get-mute)" = "false" ]; then
+                level=$(pamixer --get-volume)
+                hdr="󰕾 "
+            else
+                hdr="󰝟 "
+            fi
+            ;;
+        bright_up)
+            brightnessctl set +5%
+            level=$(get_brightness)
+            hdr="󰃠 "
+            ;;
+        bright_down)
+            brightnessctl set 5%-
+            level=$(get_brightness)
+            hdr="󰃞 "
+            ;;
+    esac
+
+    notify-send -a "vol_bright_adj" -r $notif_id -h int:value:"$level" "$hdr" -p >| $notif_file
+
+) 200>"$lockfile"
+

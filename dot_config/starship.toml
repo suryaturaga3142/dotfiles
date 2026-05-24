@@ -1,0 +1,31 @@
+format = """$python$username$hostname: $directory$git_branch $git_status\n$character"""
+
+[python]
+style = "bold cyan"
+format = "[\\($virtualenv\\) ]($style)"
+detect_extensions = []
+
+[username]
+show_always = true
+style_user = "bold green"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = true
+style = "bold green"
+format = "@[$hostname]($style)"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+symbol = " "
+style = "bold yellow"
+format = " ([$symbol$branch]($style))"
+
+[character]
+success_symbol = " [\\$](bold white) "
+error_symbol = " [\\$](bold red) "
+

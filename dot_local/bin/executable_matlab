@@ -1,0 +1,11 @@
+#!/bin/bash
+
+current_dir="$PWD"
+
+distrobox enter ubuntu-tools -- bash -lc "
+cd \"$current_dir\" || exit
+
+export QT_QPA_PLATFORM=xcb
+
+exec /opt/MATLAB/R2026a/bin/matlab
+"

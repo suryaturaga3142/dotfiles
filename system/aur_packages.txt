@@ -1,0 +1,11 @@
+archlinux-java-run
+fxload
+google-chrome
+jlink-software-and-documentation
+lib32-libpng12
+qimgv
+serial-studio-bin
+spotatui
+stm32cubemx
+tio
+visual-studio-code-bin

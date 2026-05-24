@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+status=$(cat /sys/class/power_supply/BAT0/status)
+
+if [ "$capacity" -ge 95 ]; then icon="󰁹"
+elif [ "$capacity" -ge 90 ]; then icon="󰂂"
+elif [ "$capacity" -ge 80 ]; then icon="󰂁"
+elif [ "$capacity" -ge 70 ]; then icon="󰂀"
+elif [ "$capacity" -ge 60 ]; then icon="󰁿"
+elif [ "$capacity" -ge 50 ]; then icon="󰁾"
+elif [ "$capacity" -ge 40 ]; then icon="󰁽"
+elif [ "$capacity" -ge 30 ]; then icon="󰁼"
+elif [ "$capacity" -ge 20 ]; then icon="󰁻"
+elif [ "$capacity" -ge 10 ]; then icon="󰁺"
+else icon="󰂎"
+fi
+
+indicator=""
+if [ "$status" = "Charging" ]; then
+    # Soft green lightning bolt
+    indicator="<span foreground='#a6e3a1'>󱐋</span>" 
+elif [ "$capacity" -le 20 ]; then
+    # Warning red exclamation
+    indicator="<span foreground='#ff5b78'>󱈸</span>"
+fi
+
+echo "<span>${icon} ${capacity}% ${indicator}</span>"
