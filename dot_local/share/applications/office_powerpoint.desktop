@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Office PowerPoint
+Comment=Open PowerPoint in Chrome
+Exec=/home/surya/.local/bin/office365_tools powerpoint
+Icon=/home/surya/.local/share/icons/office365/powerpoint.png
+Terminal=false
+Type=Application
+Categories=Office;

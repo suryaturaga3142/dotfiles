@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Office ToDo
+Comment=Open ToDo in Chrome
+Exec=/home/surya/.local/bin/office365_tools todo
+Icon=/home/surya/.local/share/icons/office365/todo.png
+Terminal=false
+Type=Application
+Categories=Office;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Office Excel
+Comment=Open Excel in Chrome
+Exec=/home/surya/.local/bin/office365_tools excel
+Icon=/home/surya/.local/share/icons/office365/excel.png
+Terminal=false
+Type=Application
+Categories=Office;

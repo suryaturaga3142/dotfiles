@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vivado 2025.2
+Comment=Open Vivado GUI in ubuntu-tools distrobox
+Exec=/home/surya/.local/bin/vivado
+Icon=/home/surya/.local/share/icons/distrobox/vivado.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;

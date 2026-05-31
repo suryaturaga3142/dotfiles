@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Office OneDrive
+Comment=Open OneDrive in Chrome
+Exec=/home/surya/.local/bin/office365_tools onedrive
+Icon=/home/surya/.local/share/icons/office365/onedrive.png
+Terminal=false
+Type=Application
+Categories=Office;

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=xdg-open
+MimeType=application/pdf;
+Name=xdg-open
+NoDisplay=true
+Terminal=true
+Type=Application

@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Ubuntu-tools
+GenericName=Terminal entering Ubuntu-tools
+Comment=Terminal entering Ubuntu-tools
+Categories=Distrobox;System;Utility
+Exec=/usr/bin/distrobox enter  ubuntu-tools
+Icon=/home/surya/.local/share/icons/distrobox/ubuntu.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/usr/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove Ubuntu-tools from system
+Exec=/usr/bin/distrobox rm  ubuntu-tools

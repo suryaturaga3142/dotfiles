@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=OpenFOAM (Pick Folder)
+Comment=Terminal entering OpenFOAM
+Exec=/home/surya/.local/bin/openfoam_folder
+Icon=/home/surya/.local/share/icons/openfoam.png
+Terminal=false
+Type=Application
+Categories=IDE;Development

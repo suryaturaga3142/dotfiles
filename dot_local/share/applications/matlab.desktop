@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MATLAB R2026a
+Comment=Open MATLAB in ubuntu-tools distrobox
+Exec=/home/surya/.local/bin/matlab
+Icon=/home/surya/.local/share/icons/distrobox/matlab.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;

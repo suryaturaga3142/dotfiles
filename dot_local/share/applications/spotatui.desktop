@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Spotatui
+Exec=spotatui
+Comment=Spotify for the terminal written in Rust
+Icon=/home/surya/.local/share/icons/patch/spotatui.png
+Type=Application
+Terminal=true
+StartupNotify=false
+Categories=Music;
