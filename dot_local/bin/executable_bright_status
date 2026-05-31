@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+ICONS=(" " " " " " " " " " " " " " " " " " " " " " " " " " " " " ")
+
+VAL=$(brightnessctl g)
+MAX=$(brightnessctl m)
+PERC=$(( VAL * 100 / MAX ))
+INDEX=$(( PERC * 14 / 100 ))
+
+echo "${ICONS[$INDEX]} "
+

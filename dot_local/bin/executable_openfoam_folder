@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+TARGET_DIR=$(/home/surya/.local/bin/fuzzel_pick --folder "OpenFOAM")
+
+if [ -z "$TARGET_DIR" ]; then
+    exit 1
+fi
+
+#echo 'Hooking: $TARGET_DIR -> /home/openfoam'
+kitty -e bash -c "
+    echo -e \"Hooking \e[1;32m$TARGET_DIR\e[0m \e[1;33m->\e[0m \e[1;34m/home/openfoam\e[0m\"
+    podman run --rm -it \
+        --userns=keep-id \
+        --security-opt label=disable \
+        --network=none \
+        -v '$TARGET_DIR:/home/openfoam' \
+        -w /home/openfoam \
+        docker.io/opencfd/openfoam-default:latest \
+        bash
+"
+

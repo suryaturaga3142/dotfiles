@@ -1,0 +1,34 @@
+#!/bin/bash
+
+browser=google-chrome-stable
+app="https://outlook.cloud.microsoft/mail/"
+
+case "$1" in
+    outlook)
+        app="https://outlook.cloud.microsoft/mail/"
+        ;;
+    onedrive)
+        app="https://onedrive.live.com/?view=0"
+        ;;
+    sharepoint)
+        app="https://purdue0-my.sharepoint.com/"
+        ;;
+    word)
+        app="https://word.cloud.microsoft/?wdOrigin=OFFICECOM-WEB.REDIRECT"
+        ;;
+    excel)
+        app="https://excel.cloud.microsoft/?wdOrigin=OFFICEWEBAPPHOME.SHELL"
+        ;;
+    powerpoint)
+        app="https://powerpoint.cloud.microsoft/?wdOrigin=OFFICEWEBAPPHOME.SHELL"
+        ;;
+    todo)
+        app="https://to-do.office.com/tasks/today?utm_source=applauncher"
+        ;;
+    planner)
+        app="https://planner.cloud.microsoft/webui/mytasks/assignedtome/view/grid?tid=4130bd39-7c53-419c-b1e5-8758d6d63f21"
+        ;;
+esac
+
+$browser --app=$app
+

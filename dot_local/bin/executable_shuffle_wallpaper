@@ -1,8 +1,9 @@
 #!/bin/bash
 
 #img_dir="$HOME/Pictures/wallpapers/animegirl"
-img_dir="$HOME/Pictures/wallpapers/animeblack"
+#img_dir="$HOME/Pictures/wallpapers/animeblack"
 #img_dir="$HOME/Pictures/wallpapers/cyberpunkcycle"
+img_dir="$HOME/Pictures/wallpapers/cyberpunk"
 #img_dir="$HOME/Pictures/wallpapers/city"
 #img_dir="/usr/share/wallpapers"
 

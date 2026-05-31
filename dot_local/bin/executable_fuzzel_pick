@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+CACHE="$HOME/.cache/$(basename "$0")"
+
+MODE=$1
+if [[ "$MODE" != "--file" && "$MODE" != "--folder" ]]; then
+    echo "Usage: $(basename "$0") [--file | --folder] [program]"
+    exit 1
+fi
+
+ICON=" "
+[ "$MODE" == "--folder" ] && ICON=" "
+
+CURRENT_DIR=$(pwd)
+if [ -f "$CACHE" ]; then
+    CACHED_DIR=$(<"$CACHE")
+    [ -d "$CACHED_DIR" ] && CURRENT_DIR="$CACHED_DIR"
+fi
+
+
+while true; do
+    if [[ "$MODE" == "--file" ]]; then
+        # Excludes ./
+        CHOICES=$(ls -1ap "$CURRENT_DIR" 2>/dev/null | grep -v '^\./$')
+    else
+        # Includes ./ and ../
+        CHOICES=$(ls -1ap "$CURRENT_DIR" 2>/dev/null | grep '/$')
+    fi
+    
+    PROMPT="$ICON> ${CURRENT_DIR%/}/"
+    [ -n "$2" ] && PROMPT="$ICON$2 > ${CURRENT_DIR%/}/"
+
+    SELECTION=$(echo "$CHOICES" | fuzzel -d -p "$PROMPT" -w 50)
+
+    if [[ -z "$SELECTION" ]]; then
+        exit 1
+    fi
+
+    if [[ "$MODE" == "--folder" && "$SELECTION" == "./" ]]; then
+        echo "$CURRENT_DIR"
+        echo "$CURRENT_DIR" > "$CACHE"
+        exit 0
+    fi
+
+    TARGET=$(realpath "$CURRENT_DIR/$SELECTION")
+
+    # Update state 
+    if [ -d "$TARGET" ]; then
+        CURRENT_DIR="$TARGET"
+    elif [ -f "$TARGET" ]; then
+        if [[ "$MODE" == "--file" ]]; then
+            echo "$TARGET"
+            echo "$CURRENT_DIR" > "$CACHE"
+            exit 0
+        fi
+    fi
+done
+
+

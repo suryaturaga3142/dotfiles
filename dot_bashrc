@@ -54,7 +54,7 @@ export PATH="/home/surya/.local/bin:$PATH"
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=10000
 export HISTFILESIZE=20000
-export HISTIGNORE="ls:ll:la:pwd:exit:clear:history"
+export HISTIGNORE="ls:ll:la:pwd:exit:clear:history:c:l"
 
 shopt -s checkwinsize
 shopt -s histappend

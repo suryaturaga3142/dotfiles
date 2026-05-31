@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+MIC=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+
+if [[ "$MIC" == *"[MUTED]"* ]]; then
+    echo " 󰍭 "
+else
+    echo " 󰍬 "
+fi
+
+exit 0
+
