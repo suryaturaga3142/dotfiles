@@ -30,6 +30,6 @@ border-radius=6
 font="JetBrainsMono Nerd Font 16"
 
 [app-name=Hyprshot]
-on-button-left=exec gimp "$HOME/Pictures/Screenshots/$(ls -t $HOME/Pictures/Screenshots/ | head -n 1)" & makoctl dismiss -n "$id"
+on-button-left=exec qimgv "$HOME/Pictures/Screenshots/$(ls -t $HOME/Pictures/Screenshots/ | head -n 1)" & makoctl dismiss -n "$id"
 on-button-right=dismiss
 

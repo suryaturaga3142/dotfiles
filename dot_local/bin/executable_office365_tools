@@ -1,6 +1,6 @@
 #!/bin/bash
 
-browser=google-chrome-stable
+browser="google-chrome-stable"
 app="https://outlook.cloud.microsoft/mail/"
 
 case "$1" in
@@ -30,5 +30,5 @@ case "$1" in
         ;;
 esac
 
-$browser --app=$app
+$browser --app=$app --profile-directory="Default"
 

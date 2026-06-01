@@ -13,8 +13,8 @@
         "interval": 1,
         "tooltip": false,
         "on-click": "brightnessctl set 10%",
-        "on-scroll-up": "brightnessctl set 5%+",
-        "on-scroll-down": "brightnessctl set 5%-"
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
     },
 
     "custom/mic": {
@@ -34,7 +34,7 @@
 
     "pulseaudio": {
         "format": "  {icon}{volume}%",
-        "format-bluetooth": "  {icon}{volume}%",
+        "format-bluetooth": "   {icon}{volume}%",
         "format-muted": "  󰝟    ",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": " ",
@@ -107,6 +107,11 @@
         "states": {
             "warning": 20,
             "critical": 10
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery: 󰁻 20%'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery: 󰁺 10%\nPlease plug in your device.'",
+            "on-charging-100": "notify-send -u normal 'Battery Full!'"
         }
     },
 
@@ -158,6 +163,9 @@
 
     "mpris": {
         "interval": 1,
+        "smooth-scrolling-threshold": 4.0,
+        "on-scroll-up": "playerctl position 5+",
+        "on-scroll-down": "playerctl position 5-",
         "format": "  {status_icon} {player_icon}{dynamic}",
         "format-paused": "  {status_icon} {player_icon} <i>{dynamic}</i>",
         "dynamic-order": ["title", "artist", "album", "position", "length"],
