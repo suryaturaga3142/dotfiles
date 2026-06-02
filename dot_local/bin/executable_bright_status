@@ -7,5 +7,5 @@ MAX=$(brightnessctl m)
 PERC=$(( VAL * 100 / MAX ))
 INDEX=$(( PERC * 14 / 100 ))
 
-echo "${ICONS[$INDEX]} "
+echo "{ \"text\": \"${ICONS[$INDEX]}\", \"tooltip\": \"Brightness: $PERC%\" } "
 

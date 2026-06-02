@@ -16,27 +16,35 @@ Hope you like it! Look below for pics of my desktop.
 > I'm on Arch, btw
 
 ![Lock Screen](imgs/lock_screen.png)
+<br/>
 *Lock Screen*
 
 ![Home Screen](imgs/home_screen.png)
+<br/>
 *Home Screen*
 
 ![Tmux](imgs/tmux.png)
+<br/>
 *My tmux workspace*
 
 ![Fuzzel](imgs/fuzzel_apps.png)
+<br/>
 *Fuzzel App Menu*
 
 ![mpris](imgs/waybar_mpris.png)
+<br/>
 *Waybar media manager*
 
 ![calendar](imgs/waybar_calendar.png)
+<br/>
 *Waybar calendar popup*
 
 ![bluetooth](imgs/waybar_bluetooth.png)
+<br/>
 *Waybar bluetooth menu*
 
 ![wifi](imgs/waybar_wifi.png)
+<br/>
 *Waybar WiFi menu*
 
 Surya Turaga

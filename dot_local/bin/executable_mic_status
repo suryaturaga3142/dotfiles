@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
 MIC=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
+ICON=""
 
 if [[ "$MIC" == *"[MUTED]"* ]]; then
-    echo " 󰍭 "
+    ICON=" 󰍭 "
 else
-    echo " 󰍬 "
+    ICON=" 󰍬 "
 fi
+
+echo "{ \"text\": \"${ICON}\", \"tooltip\": \"${MIC}\" }"
 
 exit 0
 

@@ -49,6 +49,9 @@ fi
 
 export PATH="/home/surya/.local/bin:$PATH"
 
+# Tmux conflict fix if needed for stuff like ssh
+#export TMUX_TMPDIR="$HOME/.tmux/tmp"
+
 # History & Navigation Upgrade 
 # Better history control
 export HISTCONTROL=ignoreboth:erasedups
