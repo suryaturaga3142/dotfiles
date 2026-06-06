@@ -33,3 +33,8 @@ font="JetBrainsMono Nerd Font 16"
 on-button-left=exec qimgv "$HOME/Pictures/Screenshots/$(ls -t $HOME/Pictures/Screenshots/ | head -n 1)" & makoctl dismiss -n "$id"
 on-button-right=dismiss
 
+[app-name=screenshot_delay]
+width=50
+height=50
+text-alignment=center
+

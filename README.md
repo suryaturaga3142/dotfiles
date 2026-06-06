@@ -47,4 +47,8 @@ Hope you like it! Look below for pics of my desktop.
 <br/>
 *Waybar WiFi menu*
 
+![btop](imgs/btop.png)
+</br>
+*btop*
+
 Surya Turaga

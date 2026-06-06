@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+notify-send -u "critical" -t 500 -a "screenshot_delay" "3"
+sleep 1
+notify-send -u "critical" -t 500 -a "screenshot_delay" "2"
+sleep 1
+notify-send -u "critical" -t 500 -a "screenshot_delay" "1"
+sleep 1
+
+FILE="$HOME/Pictures/Screenshots/$(date +'%d-%m-%Y-%H-%M-%S').png"
+grim "$FILE"
+wl-copy < "$FILE"
+
+notify-send -t 2000 -a "Hyprshot" --icon="$FILE" "Screenshot saved" "Image saved in $FILE and copied to clipboard."
+

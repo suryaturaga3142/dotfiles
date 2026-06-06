@@ -135,43 +135,28 @@ sshgit() {
 }
 
 # Helper functions for Purdue accounts
-sudef() {
+sshdef() {
     echo -e "${CYAN}Logging in to default account via SSH...${NC}"
-    ssh turagas_ececomp
+    kitty +kitten ssh turagas_ececomp
 }
-su337() {
+ssh337() {
     echo -e "${CYAN}Logging in to ECE33700 account via SSH...${NC}"
-    ssh 337mg_ececomp
+    kitty +kitten ssh 337mg_ececomp
 }
-su406() {
-    echo -e "${CYAN}Logging in to ECE40656 account via SSH...${NC}"
-    ssh ee455p_ececomp
-}
-su437() {
+ssh437() {
     echo -e "${YELLOW}Note:${NC} Full functionality will need RHEL server."
     echo -e "${CYAN}Logging in to ECE43700 account via SSH...${NC}"
-    ssh 437mg_ececomp
+    kitty +kitten ssh 437mg_ececomp
 }
-suhelp() {
+sshhelp() {
     echo -e "\n${B_PURPLE}=== PURDUE ACCOUNTS CHEAT SHEET ===${NC}"
-    echo -e "   ${B_CYAN}sudef${NC}         Purdue      turagas"
-    echo -e "   ${B_CYAN}su337${NC}         ECE33700    337mg300"
-    echo -e "   ${B_CYAN}su406${NC}         ECE40656    ee455p25"
-    echo -e "   ${B_CYAN}su437${NC}         ECE43700    437mg105"
+    echo -e "   ${B_CYAN}sshdef${NC}     Purdue      turagas"
+    echo -e "   ${B_CYAN}ssh337${NC}     ECE33700    337mg300"
+    echo -e "   ${B_CYAN}ssh437${NC}     ECE43700    437mg105"
     echo ""
 }
 
-# Activate condas
-# Sourced script.
-cm () {
-    local script_path="$HOME/stuff/condas/conda_manager.sh"
-    if [ -f "$script_path" ]; then
-        . "$script_path" "$@"
-    else
-        echo -e "${RED}Error:${NC} Venv Manager not found at ${YELLOW}$script_path${NC}"
-        return 1
-    fi
-}
+# When I eventually setup condas, a conda manager will go here
 
 # Manage python venvs
 vm () {
