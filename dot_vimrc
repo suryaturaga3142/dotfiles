@@ -65,6 +65,17 @@ endif
 set backup
 set writebackup
 
+" Remember which line
+if has("autocmd")
+  augroup vimrcEx
+    autocmd!
+    autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
+  augroup END
+endif
+
 " --- Key Mappings ---
 
 " Define Leader Key (Space)

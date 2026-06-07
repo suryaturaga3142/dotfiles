@@ -1,24 +1,106 @@
 * {
-  font-family: JetBrainsMono, monospace;
-  font-size: 13px;
+    font-family: JetBrainsMono, monospace;
+    font-size: 13px;
+    /* Reset default margins/padding */
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
 }
 
+tooltip {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(205, 214, 244, 0.6);
+}
+
+tooltip label {
+    padding: 5px;
+    color: #cdd6f4;
+}
+
+/* Make the entire background transparent */
 window#waybar {
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+    background-color: transparent;
+    color: #cdd6f4;
 }
 
+/* The Floating Bubbles */
+.modules-left, .modules-center, .modules-right {
+    background-color: #1e1e2e;
+    border-radius: 15px;
+    padding: 3px 1px 3px 1px;
+    margin: 5px 5px 2px 5px;
+
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+#workspaces {
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
+/* Workspace Button Styling */
 #workspaces button {
-  padding: 5px;
-  color: #cdd6f4;
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-right: 1px;
+    margin-left: 1px;
+    color: #cdd6f4;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: rgba(137, 180, 250, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
 }
 
 #workspaces button.active {
-  background-color: #89b4fa;
-  color: #1e1e2e;
+    background-color: #89b4fa;
+    color: #1e1e2e;
+    font-weight: bold;
 }
 
-#clock, #battery, #network, #cpu, #memory {
-  padding: 0 10px;
+#mpris {
+    padding-right: 15px;
+    padding-left: 2px;
+}
+
+#clock {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#cpu, #temperature, #memory, #disk {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#cpu {
+    padding-left: 15px;
+}
+
+#disk {
+    padding-right: 15px;
+}
+
+#pulseaudio, #bluetooth, #network, #battery {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#pulseaudio {
+    padding-left: 15px;
+}
+
+#custom-mic, #custom-brightness {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#battery {
+    padding-right: 15px;
 }
 

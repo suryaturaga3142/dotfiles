@@ -137,16 +137,17 @@ sshgit() {
 # Helper functions for Purdue accounts
 sshdef() {
     echo -e "${CYAN}Logging in to default account via SSH...${NC}"
-    kitty +kitten ssh turagas_ececomp
+    #kitty +kitten ssh turagas_ececomp
+    TERM=xterm-256color ssh -Y turagas_ececomp
 }
 ssh337() {
     echo -e "${CYAN}Logging in to ECE33700 account via SSH...${NC}"
-    kitty +kitten ssh 337mg_ececomp
+    TERM=xterm-256color ssh -Y 337mg_ececomp
 }
 ssh437() {
     echo -e "${YELLOW}Note:${NC} Full functionality will need RHEL server."
     echo -e "${CYAN}Logging in to ECE43700 account via SSH...${NC}"
-    kitty +kitten ssh 437mg_ececomp
+    TERM=xterm-256color ssh -Y 437mg_ececomp
 }
 sshhelp() {
     echo -e "\n${B_PURPLE}=== PURDUE ACCOUNTS CHEAT SHEET ===${NC}"

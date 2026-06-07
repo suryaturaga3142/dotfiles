@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WhatsApp
+Exec=google-chrome-stable --app=https://web.whatsapp.com --profile-directory=Default
+Comment=Open WhatsApp in Chrome
+Icon=/home/surya/.local/share/icons/whatsapp.png
+Type=Application
+Terminal=false
+StartupNotify=false
+Categories=Chat;
