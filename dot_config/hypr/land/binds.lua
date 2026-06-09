@@ -11,7 +11,7 @@ hl.bind(prefs.mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(prefs.ide))
 hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory='Default'"))
 hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory='Profile 3'"))
 hl.bind(prefs.mainMod .. " + E", hl.dsp.exec_cmd("snapshot"))
-hl.bind(prefs.mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("[fullscreen] gimp"))
+hl.bind(prefs.mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("gimp"))
 
 hl.bind(prefs.mainMod .. " + A", hl.dsp.exec_cmd(prefs.menu))
 hl.bind(prefs.mainMod .. " + S", hl.dsp.exec_cmd(prefs.fileManager))
@@ -20,7 +20,7 @@ hl.bind(prefs.mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("filelight"))
 hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --app='https://open.spotify.com' --profile-directory='Default'"))
 hl.bind(prefs.mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(prefs.terminal .. " -e spotatui"))
 
-hl.bind(prefs.mainMod .. " + V", hl.dsp.exec_cmd("[float] copyq menu"))
+hl.bind(prefs.mainMod .. " + V", hl.dsp.exec_cmd("copyq menu"))
 hl.bind(prefs.mainMod .. " + B", hl.dsp.exec_cmd(prefs.scripts_dir .. "/shuffle_wallpaper"))
 
 
@@ -54,8 +54,8 @@ hl.bind(prefs.mainMod .. " + Z",         hl.dsp.workspace.toggle_special("magic"
 hl.bind(prefs.mainMod .. " + SHIFT + Z", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces
-hl.bind(prefs.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(prefs.mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(prefs.mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(prefs.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(prefs.mainMod .. " + period", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(prefs.mainMod .. " + comma",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(prefs.mainMod .. " + SHIFT + period", hl.dsp.window.move({ workspace = "e+1" }))
@@ -64,6 +64,16 @@ hl.bind(prefs.mainMod .. " + SHIFT + comma", hl.dsp.window.move({ workspace = "e
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(prefs.mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(prefs.mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind(prefs.mainMod .. " + right", hl.dsp.window.resize({x = 20,  y = 0, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + left",  hl.dsp.window.resize({x = -20, y = 0, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + up",    hl.dsp.window.resize({x = 0,  y = 20, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + down",  hl.dsp.window.resize({x = 0, y = -20, relative = true}), { repeating = true })
+
+hl.bind(prefs.mainMod .. " + SHIFT + right", hl.dsp.window.move({x = 20,  y = 0, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + SHIFT + left",  hl.dsp.window.move({x = -20, y = 0, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + SHIFT + up",    hl.dsp.window.move({x = 0, y = -20, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + SHIFT + down",  hl.dsp.window.move({x = 0,  y = 20, relative = true}), { repeating = true })
 
 -- Laptop multimedia keys and controls
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness vol_up"),  { locked = true, repeating = true })
@@ -76,6 +86,12 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+hl.bind(prefs.mainMod .. " + CTRL + right", hl.dsp.exec_cmd("playerctl next"),        { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + left",  hl.dsp.exec_cmd("playerctl previous"),    { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("playerctl play-pause"),  { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + up",    hl.dsp.exec_cmd("playerctl position 5+"), { locked = true, repeating = true })
+hl.bind(prefs.mainMod .. " + CTRL + down",  hl.dsp.exec_cmd("playerctl position 5-"), { locked = true, repeating = true })
 
 hl.bind("Print", hl.dsp.exec_cmd(prefs.scripts_dir .. "/screenshot_menu"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd(prefs.scripts_dir .. "/screenshot_delay"))

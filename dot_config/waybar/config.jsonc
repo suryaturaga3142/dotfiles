@@ -11,12 +11,15 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
+        "on-click": "activate",
+        "smooth-scrolling-threshold": 3.0,
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
     },
 
     "mpris": {
         "interval": 1,
-        "smooth-scrolling-threshold": 4.0,
+        "smooth-scrolling-threshold": 3.0,
         "on-scroll-up": "playerctl position 5+",
         "on-scroll-down": "playerctl position 5-",
         "format": "{status_icon} {player_icon}{dynamic}",
