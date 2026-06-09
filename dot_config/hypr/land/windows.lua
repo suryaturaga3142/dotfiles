@@ -1,5 +1,21 @@
 -- ~/.config/hypr/land/configs.lua
 
+-- Run hyprctl clients to see the stuff to match
+
+-- Qalculate GTK
+hl.window_rule({
+    match = { class = "qalculate-gtk" },
+    float = true,
+    center = true
+})
+
+-- nRF Connect Power Profiler
+hl.window_rule({
+    match = { class = "nrfconnect", title = "Power Profiler.*" },
+    float = true,
+    center = true
+})
+
 -- Network Manager Connection Editor
 hl.window_rule({
   match  = { class = "nm-connection-editor" },
@@ -31,24 +47,26 @@ hl.window_rule({
   size  = { 500, 400 },
   move  = { "cursor_x-(window_w*0.5)", "cursor_y-(window_h*0.5)" },
 
-  no_anim    = true,
-  no_blur    = true,
-  no_dim     = true,
-  no_shadow  = true,
-  opaque     = true,
-  force_rgbx = true
+  --no_anim    = true,
+  --no_blur    = true,
+  --no_dim     = true,
+  --no_shadow  = true,
+  --opaque     = true,
+  --force_rgbx = true
 })
 
--- GIMP main window (doesnt work yet)
+-- GIMP main window (needs allowance in below suppression rule)
 hl.window_rule({
-  match      = { class = "gimp", title = "GNU*" },
+  match      = { class = "gimp", title = "GNU.*" },
   fullscreen = true
 })
 
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps
+    -- To add to list of exceptions, (gimp|something|something...)
     name  = "suppress-maximize-events",
     match = { class = ".*" },
+    match = { class = "^(?!^(gimp)$).*" },
 
     suppress_event = "maximize",
 })
