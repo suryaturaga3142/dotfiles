@@ -1,8 +1,11 @@
 archlinux-java-run
+browsh-bin
 fxload
 google-chrome
 jlink-software-and-documentation
+kalker-bin
 lib32-libpng12
+nrf-udev
 qimgv
 serial-studio-bin
 spotatui

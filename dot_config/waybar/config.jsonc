@@ -52,10 +52,12 @@
         "format": "{icon}{usage:2}%",
         "format-icons": ["󰋙 ", "󰫃 ", "󰫄 ", "󰫅 ", "󰫆 ", "󰫇 ", "󰫈 "],
         "tooltip": true,
-        "tooltip-format": "  Load: {load}\n󰓅  Frequency: {avg_frequency}"
+        "tooltip-format": "(This feature isn't supported)\n  Load: {load}\n󰓅  Frequency: {avg_frequency}"
     },
 
     "temperature": {
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+        "input-filename": "temp1_input",
         "interval": 30,
         "critical-threshold": 90,
         "format": "{icon} {temperatureC}°C",

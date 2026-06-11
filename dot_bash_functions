@@ -11,11 +11,6 @@ mkcd() {
     cd "$1" || return 1
 }
 
-# Switch to win
-cdwin() {
-    cd "$WIN" || return 1
-}
-
 # Universal Extractor
 extract() {
     if [ -f "$1" ] ; then

@@ -1,3 +1,4 @@
+-- ~/.config/hypr/land/inputs.lua
 
 hl.config({
     input = {
