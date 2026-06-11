@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+kitty @ set-background-image /home/surya/Pictures/wallpapers/distros/blackarch1.png
+kitty @ set-colors background=#151515
+
+distrobox enter blackarch
+
+kitty @ set-background-image none
+kitty @ set-colors background=#000000
+
