@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+kitty @ set-background-image /home/surya/Pictures/wallpapers/distros/ubuntu2.jpg
+kitty @ set-colors background=#050505
+
+distrobox enter osic-tools
+
+kitty @ set-background-image none
+kitty @ set-colors background=#000000
+

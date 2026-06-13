@@ -1,9 +1,13 @@
-format = """$python$username$hostname: $directory$git_branch $git_status\n $character"""
+format = """$container $python$username$hostname: $directory$git_branch $git_status\n $character"""
 
 [python]
 style = "bold 215"
 format = "[\\($virtualenv\\) ]($style)"
 detect_extensions = []
+
+[container]
+style = "bold 125"
+format = "[\\[$name\\]]($style)"
 
 [username]
 show_always = true

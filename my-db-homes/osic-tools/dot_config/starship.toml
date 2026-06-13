@@ -1,35 +1,35 @@
 format = """$container $python$username$hostname: $directory$git_branch $git_status\n $character"""
 
 [python]
-style = "bold 130"
+style = "bold 215"
 format = "[\\($virtualenv\\) ]($style)"
 detect_extensions = []
 
 [container]
-style = "bold 130"
+style = "bold 215"
 format = "[\\[$name\\]]($style)"
 
 [username]
 show_always = true
-style_user = "bold 166"
+style_user = "bold 181"
 format = "[$user]($style)"
 
 [hostname]
 ssh_only = true
-style = "bold 166"
+style = "bold 181"
 format = "@[$hostname]($style)"
 
 [directory]
-style = "bold 170"
+style = "bold 147"
 truncation_length = 3
 fish_style_pwd_dir_length = 1
 
 [git_branch]
 symbol = " "
-style = "bold 139"
+style = "bold 174"
 format = "([$symbol$branch]($style))"
 
 [character]
-success_symbol = "[❯](bold white) "
-error_symbol = "[❯](bold red) "
+success_symbol = "[󰋘](bold white) "
+error_symbol = "[󰋘](bold red) "
 
