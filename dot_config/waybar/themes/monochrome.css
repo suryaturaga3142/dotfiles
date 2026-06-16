@@ -1,0 +1,8 @@
+/* ~/.config/waybar/themes/monochrome.css */
+
+/* Monochrome */
+@define-color bg-dark  #050505;
+@define-color bg-light #141414;
+@define-color accent   #FFFFFF;
+@define-color text     #A0A0A0;
+

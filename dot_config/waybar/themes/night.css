@@ -1,0 +1,8 @@
+/* ~/.config/waybar/themes/night.css */
+
+/* Night */
+@define-color bg-dark  #100C14;
+@define-color bg-light #1D1726;
+@define-color accent   #8F2A6E;
+@define-color text     #E8DFE5;
+

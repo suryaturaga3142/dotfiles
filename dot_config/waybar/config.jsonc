@@ -6,7 +6,7 @@
 
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["cpu", "temperature", "clock", "memory", "disk"],
-    "modules-right": ["pulseaudio", "custom/mic", "custom/brightness", "bluetooth", "network", "battery"],
+    "modules-right": ["pulseaudio", "custom/mic", "custom/brightness", "bluetooth", "network", "custom/power_mode", "battery"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -48,7 +48,7 @@
     },
 
     "cpu": {
-        "interval": 10,
+        "interval": 1,
         "format": "{icon}{usage:2}%",
         "format-icons": ["󰋙 ", "󰫃 ", "󰫄 ", "󰫅 ", "󰫆 ", "󰫇 ", "󰫈 "],
         "tooltip": true,
@@ -61,7 +61,7 @@
         "interval": 30,
         "critical-threshold": 90,
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", "", "", "󱈸"],
+        "format-icons": ["<span color='#2255ff'></span>", "<span color='#4488ff'></span>", "<span color='orange'></span>", "<span color='#ff0000'></span>", "<span color='#ff0000'>󱈸</span>"],
         "tooltip": true,
         "tooltip-format": "{temperatureF}°F"
     },
@@ -180,13 +180,23 @@
         "on-click-right": "rfkill toggle wifi"
     },
 
+    "custom/power_mode": {
+        "return-type": "json",
+        "exec": "$HOME/.local/bin/power_status",
+        "format": "{text}",
+        "tooltip": true,
+        "interval": 5,
+        "on-click": "$HOME/.local/bin/power_cycle",
+        "on-click-right": "$HOME/.local/bin/power_cycle -r"
+    },
+
     "battery": {
         "interval": 5,
         "format": "{icon} {capacity}%",
         "format-charging": "{icon} {capacity}% <span color='#11ff11'>󱐋</span>",
         "format-discharging": "{icon} {capacity}%",
         "format-discharging-warning": "{icon} {capacity}% <span color='#ff3333'>󱈸</span>",
-        "format-discharging-critical": "{icon} {capacity}% <span color='#ffff00'> </span>",
+        "format-discharging-critical": "<span color='#ffff00'>{icon}</span> {capacity}% <span color='#ffff00'> </span>",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip": true,
         "tooltip-format-discharging": "Discharging: {time}\nHealth: {health}%",

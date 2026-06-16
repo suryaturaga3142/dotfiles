@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+MODE="$(powerprofilesctl get)"
+
+ICON=""
+COLOR=""
+FMT=""
+
+case "$MODE" in
+    performance)
+        ICON="󰓅"
+        COLOR="green"
+        FMT="Performance"
+        ;;
+    balanced)
+        ICON="󰾅"
+        COLOR="orange"
+        FMT="Balanced"
+        ;;
+    power-saver)
+        ICON="󰾆"
+        COLOR="red"
+        FMT="Power Saver"
+        ;;
+esac
+
+echo "{ \"text\": \"<span color='${COLOR}'>${ICON}</span>\", \"tooltip\": \"${FMT}\" }"
+

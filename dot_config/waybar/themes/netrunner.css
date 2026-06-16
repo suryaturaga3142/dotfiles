@@ -1,0 +1,8 @@
+/* ~/.config/waybar/themes/netrunner.css */
+
+/* Netrunner */
+@define-color bg-dark  #081014;
+@define-color bg-light #121E26;
+@define-color accent   #208A91;
+@define-color text     #D6E6E8;
+

@@ -30,7 +30,7 @@ while true; do
     PROMPT="$ICON> ${CURRENT_DIR%/}/"
     [ -n "$2" ] && PROMPT="$ICON$2 > ${CURRENT_DIR%/}/"
 
-    SELECTION=$(echo "$CHOICES" | fuzzel -d -p "$PROMPT" -w 50)
+    SELECTION=$(echo "$CHOICES" | fuzzel -d -p "$PROMPT" -w 50 -l 10 --minimal-lines 2)
 
     if [[ -z "$SELECTION" ]]; then
         exit 1

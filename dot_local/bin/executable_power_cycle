@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+MODE="$(powerprofilesctl get)"
+TARGET="$MODE"
+
+case "$MODE" in
+    performance)
+        TARGET="balanced"
+        [ "$1" == "-r" ] && TARGET="power-saver"
+        ;;
+    balanced)
+        TARGET="power-saver"
+        [ "$1" == "-r" ] && TARGET="performance"
+        ;;
+    power-saver)
+        TARGET="performance"
+        [ "$1" == "-r" ] && TARGET="balanced"
+        ;;
+esac
+
+powerprofilesctl set $TARGET
+
