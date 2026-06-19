@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=4.4.0
+Name=Power Profiler
+Exec="/home/surya/Desktop/nrfconnect-5.3.1-x86_64.AppImage" --args --open-downloadable-app "pc-nrfconnect-ppk" --source "official"
+Terminal=false
+Icon=/home/surya/.nrfconnect-apps/node_modules/pc-nrfconnect-ppk/resources/icon.png
+Type=Application

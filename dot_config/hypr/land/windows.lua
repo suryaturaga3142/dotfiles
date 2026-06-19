@@ -2,6 +2,20 @@
 
 -- Run hyprctl clients to see the stuff to match
 
+-- Brightspace Login
+hl.window_rule({
+    match = { class = "google-chrome", title = "Login - Purdue University System - Google Chrome" },
+    float = true,
+    center = true
+})
+
+-- STM32CubeMX
+hl.window_rule({
+    match = { class = "com-st-microxplorer-maingui-STM32CubeMX" },
+    float = true,
+    center = true
+})
+
 -- Qalculate GTK
 hl.window_rule({
     match = { class = "qalculate-gtk" },

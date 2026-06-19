@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Blackarch
+GenericName=Terminal entering Blackarch
+Comment=Terminal entering Blackarch
+Categories=Distrobox;System;Utility
+Exec=/usr/bin/distrobox enter  blackarch
+Icon=/home/surya/.local/share/icons/distrobox/arch.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/usr/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove Blackarch from system
+Exec=/usr/bin/distrobox rm  blackarch

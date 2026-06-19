@@ -5,6 +5,7 @@ local prefs = require("land.prefs")
 local closeWindowBind = hl.bind(prefs.mainMod .. " + C", hl.dsp.window.close())
 
 hl.bind(prefs.mainMod .. " + M", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind(prefs.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("kitty --start-as=fullscreen -e sh -c 'sleep 1 && cmatrix'"))
 
 hl.bind(prefs.mainMod .. " + Q", hl.dsp.exec_cmd(prefs.terminal))
 hl.bind(prefs.mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(prefs.ide))

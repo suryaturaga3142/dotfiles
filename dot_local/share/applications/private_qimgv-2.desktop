@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=qimgv
+MimeType=image/png;
+Name=qimgv
+NoDisplay=true
+Type=Application

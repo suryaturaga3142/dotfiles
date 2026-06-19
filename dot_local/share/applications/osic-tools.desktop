@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Osic-tools
+GenericName=Terminal entering Osic-tools
+Comment=Terminal entering Osic-tools
+Categories=Distrobox;System;Utility
+Exec=/usr/bin/distrobox enter  osic-tools
+Icon=/home/surya/.local/share/icons/distrobox/ubuntu.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/usr/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove Osic-tools from system
+Exec=/usr/bin/distrobox rm  osic-tools

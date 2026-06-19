@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=nRF Connect for Desktop
+Comment=Cross-platform development software for Nordic Products
+Exec=/home/surya/Desktop/nrfconnect-5.3.1-x86_64.AppImage
+Icon=/home/surya/.local/share/icons/nrf_connect.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;
