@@ -80,6 +80,10 @@ set -o noclobber
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+# Hyprland / Wayland compatibility
+export QT_QPA_PLATFORM=xcb
+export GDK_BACKEND=x11
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Initialize Starship
 eval "$(starship init bash)"

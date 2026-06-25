@@ -140,3 +140,6 @@ nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fg :Rg<CR>
 
+" Clipboard for vim w/o it (check vim --version)
+vnoremap <leader>y :w !wl-copy<CR><CR>
+

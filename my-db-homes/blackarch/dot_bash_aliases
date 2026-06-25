@@ -1,5 +1,7 @@
 # ~/.bash_aliases
 
+HOST_HOME='/home/surya'
+
 # --- Escapes for Color ---
 # Reset
 NC='\033[0m'
