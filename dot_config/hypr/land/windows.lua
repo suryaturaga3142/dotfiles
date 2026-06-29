@@ -1,6 +1,16 @@
 -- ~/.config/hypr/land/configs.lua
 
 -- Run hyprctl clients to see the stuff to match
+-- Pay attention to initialClass and initialTitle tho,
+-- has to match those bc those are on startup
+
+--[[
+-- Bitwarden Popup
+hl.window_rule({
+    match = { class = "firefox", title = ".*Bitwarden.*" },
+    float = true,
+    center = true
+})
 
 -- Brightspace Login
 hl.window_rule({
@@ -8,6 +18,7 @@ hl.window_rule({
     float = true,
     center = true
 })
+]]
 
 -- STM32CubeMX
 hl.window_rule({

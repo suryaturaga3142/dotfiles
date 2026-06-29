@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
+fi
+
+trap 'kitty @ set-background-image none; kitty @ set-colors background=#000000' EXIT INT TERM HUP
+
+kitty @ set-background-image /home/surya/Pictures/wallpapers/distros/ece1.jpg
+kitty @ set-colors background=#05050F
+
+ACC="turagas_ececomp"
+
+case "$1" in
+    "--337")
+        echo -e "${CYAN}Logging in to ECE33700 account via SSH...${NC}"
+        ACC="337_ececomp"
+        ;;
+    "--437")
+        echo -e "${YELLOW}Note:${NC} Full functionality will need RHEL server."
+        echo -e "${CYAN}Logging in to ECE43700 account via SSH...${NC}"
+        ACC="437_ececomp"
+        ;;
+    *)
+        echo -e "${CYAN}Logging in to default account via SSH...${NC}"
+        ;;
+esac
+
+TERM=xterm-256color ssh -Y "$ACC"
+

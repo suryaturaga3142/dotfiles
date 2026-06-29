@@ -51,18 +51,13 @@ sshgit() {
 
 # Helper functions for Purdue accounts
 sshdef() {
-    echo -e "${CYAN}Logging in to default account via SSH...${NC}"
-    #kitty +kitten ssh turagas_ececomp
-    TERM=xterm-256color ssh -Y turagas_ececomp
+    $HOME/.local/bin/ssh_purdue
 }
 ssh337() {
-    echo -e "${CYAN}Logging in to ECE33700 account via SSH...${NC}"
-    TERM=xterm-256color ssh -Y 337mg_ececomp
+    $HOME/.local/bin/ssh_purdue --337
 }
 ssh437() {
-    echo -e "${YELLOW}Note:${NC} Full functionality will need RHEL server."
-    echo -e "${CYAN}Logging in to ECE43700 account via SSH...${NC}"
-    TERM=xterm-256color ssh -Y 437mg_ececomp
+    $HOME/.local/bin/ssh_purdue --437
 }
 sshhelp() {
     echo -e "\n${B_PURPLE}=== PURDUE ACCOUNTS CHEAT SHEET ===${NC}"
@@ -72,7 +67,117 @@ sshhelp() {
     echo ""
 }
 
-# When I eventually setup condas, a conda manager will go here
+# Conda manager
+cm () {
+    # Check if conda is installed and available in PATH
+    if ! command -v conda >/dev/null 2>&1; then
+        echo -e "${RED}Error:${NC} conda command not found. Please install Miniconda first."
+        return 1
+    fi
+
+    # Fetch available conda environments
+    local get_conda_list=($(conda env list | awk '/^[a-zA-Z0-9_-]/ {print $1}'))
+
+    show_usage() {
+        echo -e "${B_PURPLE}Conda Env Manager${NC}"
+        echo -e "Usage: cm ${YELLOW}<name>${NC} [flags]"
+        echo ""
+        echo -e "Commands:"
+        echo -e "  ${YELLOW}<name>${NC}         Activate an existing conda env (e.g., 'cm work')."
+        echo -e "  ${YELLOW}<name>${NC} ${CYAN}--create${NC} Create and activate a new conda env."
+        echo -e "  ${CYAN}list${NC}           List all available conda envs."
+        echo -e "  ${CYAN}--kill${NC}         Deactivate the current session."
+        echo -e "  ${CYAN}--help${NC}         Show this help message."
+        echo ""
+        
+        if [ ${#get_conda_list[@]} -eq 0 ]; then
+            echo -e "Detected Envs: ${RED}None${NC}"
+        else
+            echo -e "Detected Envs: ${YELLOW}${get_conda_list[*]}${NC}"
+        fi
+    }
+
+    if [[ -z "$1" || "$1" == "--help" || "$1" == "-h" ]]; then
+        show_usage
+        unset -f show_usage
+        return 0
+    fi
+
+    local MODE="$1"
+    local FLAG="$2"
+
+    case "$MODE" in
+        list)
+            echo -e "${B_PURPLE}Available Conda Environments:${NC}"
+            if [ ${#get_conda_list[@]} -eq 0 ]; then
+                echo "  (None)"
+            else
+                for c in "${get_conda_list[@]}"; do
+                    # Add a little star if it's the currently active env
+                    if [[ "$CONDA_DEFAULT_ENV" == "$c" ]]; then
+                        echo -e "  - ${GREEN}$c${NC} (active)"
+                    else
+                        echo "  - $c"
+                    fi
+                done
+            fi
+            ;;
+
+        --kill)
+            # CONDA_DEFAULT_ENV is a built-in variable conda uses to track the active env
+            if [[ -n "$CONDA_DEFAULT_ENV" && "$CONDA_DEFAULT_ENV" != "base" ]]; then
+                conda deactivate
+                echo -e "${GREEN}Success:${NC} Conda environment deactivated."
+            elif [[ "$CONDA_DEFAULT_ENV" == "base" ]]; then
+                conda deactivate
+                echo -e "${YELLOW}Warning:${NC} Deactivated base environment."
+            else
+                echo -e "${RED}Error:${NC} No conda environment is currently active."
+                return 1
+            fi
+            ;;
+
+        *)
+            local ENV_NAME="$MODE"
+            local env_exists=false
+
+            # Check if requested env is in fetched list
+            for e in "${get_conda_list[@]}"; do
+                if [[ "$e" == "$ENV_NAME" ]]; then
+                    env_exists=true
+                    break
+                fi
+            done
+            
+            if [ "$FLAG" == "--create" ]; then
+                if [ "$env_exists" = true ]; then
+                    echo -e "${YELLOW}Warning:${NC} '$ENV_NAME' already exists. Activating..."
+                else
+                    echo -e "Creating new conda env: ${CYAN}$ENV_NAME${NC}..."
+                    # Automatically installs default python to mimic standard venv behavior
+                    conda create -y -n "$ENV_NAME" python
+                    
+                    if [ $? -eq 0 ]; then
+                        echo -e "${GREEN}Success:${NC} Conda env created."
+                    else
+                        echo -e "${RED}Error:${NC} Conda creation failed."
+                        return 1
+                    fi
+                fi
+            elif [ "$env_exists" = false ]; then
+                echo -e "${RED}Error:${NC} Conda env '${YELLOW}$ENV_NAME${NC}' does not exist."
+                echo -e "To create it, run: ${CYAN}cm $MODE --create${NC}"
+                return 1
+            fi
+
+            echo -e "Activating ${CYAN}$ENV_NAME${NC}..."
+            # Conda shell functions must be initialized in bashrc for this to work natively
+            conda activate "$ENV_NAME"
+            ;;
+    esac
+
+    unset -f show_usage
+}
 
 # Manage python venvs
 vm () {

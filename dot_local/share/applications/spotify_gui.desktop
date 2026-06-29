@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Spotify GUI
-Exec=google-chrome-stable --app=https://open.spotify.com --profile-directory=Default
+#Exec=google-chrome-stable --app=https://open.spotify.com --profile-directory=Default
+Exec=firefox --new-window https://open.spotify.com --profile "/home/surya/.config/mozilla/firefox/pws40znd.default-release"
 Comment=Open Spotify in Chrome
 Icon=/home/surya/.local/share/icons/patch/spotatui.png
 Type=Application

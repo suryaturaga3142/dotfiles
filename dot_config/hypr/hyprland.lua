@@ -2,8 +2,8 @@
 
 local prefs = require("land.prefs")
 require("land.binds")
-require("land.inputs")
 require("land.animations")
+require("land.inputs")
 require("land.monitors")
 
 -- Autostart
