@@ -1,0 +1,41 @@
+-- ~/.config/nvim/lua/plugins/ui.lua
+
+return {
+    -- Gruvbox
+    -- High priority so theme loads before other stuff
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = function()
+            vim.opt.background = "dark"
+            vim.cmd("colorscheme gruvbox")
+            vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+            vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+        end,
+    },
+    
+    -- Statusline
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = "gruvbox-material",
+                    globalstatus = true,
+                    component_separators = { left = '\\', right = '/' },
+                    section_separators = { left = '', right = '' }
+                },
+                sections = {
+                    lualine_a = {'mode'},
+                    lualine_b = {'branch', 'diff', 'filename'},
+                    lualine_c = {'diagnostics'},
+                    lualine_x = {'encoding', 'fileformat', 'filesize'},
+                    lualine_y = {'filetype'},
+                    lualine_z = {'progress', 'location'}
+                },
+            })
+        end,
+    },
+}
+
