@@ -95,37 +95,43 @@ return {
                 vim.lsp.enable(server)
             end
             
-            -- Global mappings for LSP features
-            local map = vim.keymap.set
-            
+            -- Buffer-local mappings, applied only when an LSP attaches.
+            --   Idiomatic navigation on g... / K / [p ]p.
+            --   Actions grouped under <leader>l...
+            --   Telescope-backed finders join <leader>f... group
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
-                    local opts = { buffer = ev.buf, silent = true }
-                    
-                    opts.desc = "Go to Definition"
-                    map('n', 'gd', vim.lsp.buf.definition, opts)
-                    
-                    opts.desc = "Hover Documentation"
-                    map('n', 'K', vim.lsp.buf.hover, opts)
-                    
-                    opts.desc = "Code Action"
-                    map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-                    
-                    opts.desc = "Rename Variable"
-                    map('n', '<leader>rn', vim.lsp.buf.rename, opts)
+                    local builtin = require("telescope.builtin")
+                    local function lmap(lhs, rhs, desc)
+                        vim.keymap.set('n', lhs, rhs, { buffer = ev.buf, silent = true, desc = desc })
+                    end
 
-                    opts.desc = "Open Diagnostics"
-                    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+                    -- Navigation
+                    lmap('gd', vim.lsp.buf.definition, "Go to definition")
+                    lmap('gD', vim.lsp.buf.declaration, "Go to declaration")
+                    lmap('gi', vim.lsp.buf.implementation, "Go to implementation")
+                    lmap('ge', vim.diagnostic.open_float, "Hover diagnostics float")
+                    lmap('gr', builtin.lsp_references, "References") -- Repeated w Telescope finder below
+                    lmap('K', vim.lsp.buf.hover, "Hover documentation")
+                    lmap('[p', function() vim.diagnostic.jump({ count = -1, float = true }) end, "Previous diagnostic")
+                    lmap(']p', function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")
 
-                    opts.desc = "Previous Diagnostic"
-                    map('n', '[d', vim.diagnostic.goto_prev, opts)
+                    -- LSP action group: <leader>l...
+                    lmap('<leader>la', vim.lsp.buf.code_action, "Code action")
+                    lmap('<leader>lr', vim.lsp.buf.rename, "Rename symbol")
+                    lmap('<leader>le', vim.diagnostic.open_float, "Line diagnostics")
+                    lmap('<leader>ld', vim.lsp.buf.definition, "Go to definition")
+                    lmap('<leader>li', vim.lsp.buf.implementation, "Go to implementation")
+                    lmap('<leader>lt', vim.lsp.buf.type_definition, "Type definition")
+                    lmap('<leader>ls', vim.lsp.buf.signature_help, "Signature help")
+                    lmap('<leader>lf', function() vim.lsp.buf.format({ async = true }) end, "Format buffer")
 
-                    opts.desc = "Next Diagnostic"
-                    map('n', ']d', vim.diagnostic.goto_next, opts)
-
-                    opts.desc = "Find References"
-                    map('n', 'gr', require("telescope.builtin").lsp_references, opts)
+                    -- LSP-backed Telescope finders: <leader>f...
+                    lmap('<leader>fr', builtin.lsp_references, "Find references")
+                    lmap('<leader>fs', builtin.lsp_document_symbols, "Document symbols")
+                    lmap('<leader>fS', builtin.lsp_dynamic_workspace_symbols, "Workspace symbols")
+                    lmap('<leader>fi', builtin.lsp_implementations, "Find implementations")
                 end,
             })
         end,

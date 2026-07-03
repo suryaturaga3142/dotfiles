@@ -4,7 +4,8 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        { "<leader>s", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Explorer" },
+        -- Nvim-tree toggle
+        { "<leader>w", "<cmd>NvimTreeToggle<CR>", desc = "File explorer (nvim-tree)" },
     },
     config = function()
         -- Prevent conflicts

@@ -9,7 +9,6 @@ vim.filetype.add({
         svh = 'systemverilog',
     },
 })
-
 vim.filetype.add({
     extension = {
         ['do'] = 'tcl',

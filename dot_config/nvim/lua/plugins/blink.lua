@@ -25,9 +25,8 @@ return {
             },
 
             -- tree
-            { '<C-e>', '<cmd>BlinkTree reveal<cr>', desc = 'Reveal current file in tree' },
-            { '<leader>E', '<cmd>BlinkTree toggle<cr>', desc = 'Reveal current file in tree' },
-            { '<leader>e', '<cmd>BlinkTree toggle-focus<cr>', desc = 'Toggle file tree focus' },
+            { '<leader>s', '<cmd>BlinkTree toggle-focus<cr>', desc = 'File tree (blink)' },
+            { '<leader>S', '<cmd>BlinkTree reveal<cr>', desc = 'Reveal current file in blink tree' },
         },
         -- all modules handle lazy loading internally
         lazy = false,
@@ -60,12 +59,38 @@ return {
             --
             -- All presets have the following mappings:
             -- C-space: Open menu or open docs if already open
-            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-n/C-p OR Up/Down: Select next/previous item
             -- C-e: Hide menu
             -- C-k: Toggle signature help (if signature.enabled = true)
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
-            keymap = { preset = 'default' },
+            --
+            --[[ 
+                ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-e>'] = { 'hide', 'fallback' },
+                ['<C-y>'] = { 'select_and_accept', 'fallback' },
+                
+                ['<Up>'] = { 'select_prev', 'fallback' },
+                ['<Down>'] = { 'select_next', 'fallback' },
+                ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+                ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+                
+                ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+                
+                ['<Tab>'] = { 'snippet_forward', 'fallback' },
+                ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+                
+                ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+            --]]
+            --
+            keymap = {
+                preset = 'default',
+                ['<C-n>'] = {},
+                --['<C-p>'] = {},
+                ['<C-p>'] = { 'select_and_accept', 'fallback' },
+                ['<Esc>'] = { 'hide', 'fallback' },
+            },
 
             -- (Default) Only show the documentation popup when manually triggered
             completion = { documentation = { auto_show = false } },

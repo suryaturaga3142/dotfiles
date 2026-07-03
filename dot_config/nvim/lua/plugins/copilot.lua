@@ -1,4 +1,6 @@
 -- ~/.config/nvim/lua/plugins/copilot.lua
+--
+-- Use this way more than claude, student account allows more easy use
 
 return {
     "github/copilot.vim",
@@ -10,9 +12,10 @@ return {
         local map = vim.keymap.set
         local opts = { expr = true, silent = true, replace_keycodes = false }
 
-        map("i", "<C-j>", 'copilot#Accept("<CR>")', opts)
-        map("i", "<M-]>", "<Plug>(copilot-next)", opts)
-        map("i", "<M-[>", "<Plug>(copilot-previous)", opts)
+        map("i", "<C-m>", 'copilot#Accept("<CR>")', opts)
+        map("i", "<C-n>", "<Plug>(copilot-dismiss)", { silent = true } )
+        map("i", "<M-]>", "<Plug>(copilot-next)", { silent = true } )
+        map("i", "<M-[>", "<Plug>(copilot-previous)", { silent = true } )
     end,
 }
 

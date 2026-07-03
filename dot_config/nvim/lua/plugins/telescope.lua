@@ -7,10 +7,20 @@ return {
         "nvim-tree/nvim-web-devicons",
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
+    -- Finder group: <leader>f...
+    -- Attach only when an LSP is present
     keys = {
-        { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
-        { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffers" },
-        { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep (Rg)" },
+        { "<leader>ff", "<cmd>Telescope find_files<CR>",                desc = "Find files" },
+        { "<leader>fg", "<cmd>Telescope live_grep<CR>",                 desc = "Live grep (rg)" },
+        { "<leader>fb", "<cmd>Telescope buffers<CR>",                   desc = "Find buffers" },
+        { "<leader>fo", "<cmd>Telescope oldfiles<CR>",                  desc = "Recent files" },
+        { "<leader>fw", "<cmd>Telescope grep_string<CR>",               desc = "Grep word under cursor" },
+        { "<leader>fe", "<cmd>Telescope diagnostics<CR>",               desc = "Diagnostics" },
+        { "<leader>fh", "<cmd>Telescope help_tags<CR>",                 desc = "Help tags" },
+        { "<leader>fk", "<cmd>Telescope keymaps<CR>",                   desc = "Keymaps" },
+        { "<leader>fc", "<cmd>Telescope commands<CR>",                  desc = "Commands" },
+        { "<leader>fR", "<cmd>Telescope resume<CR>",                    desc = "Resume last picker" },
+        { "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Search in buffer" },
     },
     config = function()
         local telescope = require("telescope")
@@ -27,6 +37,9 @@ return {
                 sorting_strategy = "ascending",
             },
         })
+
+        -- Activate the compiled fzf matcher (built via the fzf-native dependency)
+        pcall(telescope.load_extension, "fzf")
     end,
 }
 

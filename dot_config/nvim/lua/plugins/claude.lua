@@ -1,4 +1,7 @@
 -- ~/.config/nvim/lua/plugins/claude.lua
+--
+-- Generally don't use this much bc claude is expensive, so needs proper planning
+-- Better to open a terminal and run or just think before using the plugin
 
 return {
     "coder/claudecode.nvim",
@@ -64,7 +67,7 @@ return {
             snacks_win_opts = {
                 position = "float",
                 width = 0.85,
-                height = 0.85,
+                height = 0.65,
                 border = "rounded",
                 backdrop = 60,
                 keys = {

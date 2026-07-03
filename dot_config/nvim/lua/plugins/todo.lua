@@ -5,7 +5,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     event = { "BufReadPost", "BufNewFile" },
     keys = {
-        { "<leader>ft", "<cmd>TodoTelescope<CR>", desc = "Find Todos (Telescope)" },
+        { "<leader>ft", "<cmd>TodoTelescope<CR>", desc = "Find Todos" },
     },
     config = function()
         require("todo-comments").setup({
