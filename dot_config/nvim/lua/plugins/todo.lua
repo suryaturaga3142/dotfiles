@@ -9,7 +9,7 @@ return {
     },
     config = function()
         require("todo-comments").setup({
-            signs = true, -- Show icons in the gutter
+            signs = true,
             
             colors = {
                 bug_col  = { "#d32f2f" },
@@ -27,7 +27,7 @@ return {
                 BUG = { icon = " ", color = "bug_col" },
                 CRITICAL = { icon = "󰀪 ", color = "crit_col" },
                 FIXME = { icon = " ", color = "fix_col", alt = { "FIX", "FIXIT" } },
-                OPTIMIZE = { icon = "⚡", color = "opt_col", alt = { "PERF", "SPEED" } },
+                OPTIMIZE = { icon = "󱐋 ", color = "opt_col", alt = { "PERF", "SPEED" } },
                 TODO = { icon = " ", color = "todo_col" },
                 HACK = { icon = " ", color = "hack_col" },
                 XXX = { icon = " ", color = "xxx_col" },

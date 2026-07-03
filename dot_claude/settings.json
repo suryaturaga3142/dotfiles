@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "TaskCreate",
+      "TaskGet",
+      "TaskList",
+      "TaskOutput",
+      "TaskStop",
+      "TaskUpdate",
+      "mcp__claude_ai__*"
+    ],
+    "ask": [
+      "Edit",
+      "Write"
+    ],
+    "deny": [
+      "Bash",
+
+      "Read(~/.ssh/**)",
+      "Glob(~/.ssh/**)",
+      "Grep(~/.ssh/**)",
+      "Edit(~/.ssh/**)",
+      "Write(~/.ssh/**)",
+
+      "Read(~/.aws/**)",
+      "Glob(~/.aws/**)",
+      "Grep(~/.aws/**)",
+      "Edit(~/.aws/**)",
+      "Write(~/.aws/**)",
+
+      "Read(~/.gnupg/**)",
+      "Glob(~/.gnupg/**)",
+      "Grep(~/.gnupg/**)",
+      "Edit(~/.gnupg/**)",
+      "Write(~/.gnupg/**)",
+
+      "Read(**/.git/**)",
+      "Glob(**/.git/**)",
+      "Grep(**/.git/**)",
+      "Edit(**/.git/**)",
+      "Write(**/.git/**)",
+
+      "Read(**/node_modules/**)",
+      "Glob(**/node_modules/**)",
+      "Grep(**/node_modules/**)",
+      "Edit(**/node_modules/**)",
+      "Write(**/node_modules/**)",
+
+      "Read(**/.venv/**)",
+      "Glob(**/.venv/**)",
+      "Grep(**/.venv/**)",
+      "Edit(**/.venv/**)",
+      "Write(**/.venv/**)",
+
+      "Read(**/venv/**)",
+      "Glob(**/venv/**)",
+      "Grep(**/venv/**)",
+      "Edit(**/venv/**)",
+      "Write(**/venv/**)",
+
+      "Read(**/__pycache__/**)",
+      "Glob(**/__pycache__/**)",
+      "Grep(**/__pycache__/**)",
+      "Edit(**/__pycache__/**)",
+      "Write(**/__pycache__/**)",
+
+      "Read(**/*-lock.json)",
+      "Read(**/package-lock.json)",
+      "Read(**/yarn.lock)",
+      "Read(**/pnpm-lock.yaml)",
+      "Read(**/Cargo.lock)",
+      "Read(**/poetry.lock)",
+      "Read(**/gemfile.lock)",
+      "Read(**/flake.lock)",
+
+      "Read(**/*.swp)",
+      "Read(**/*.swo)",
+      "Read(**/*~)",
+      "Read(**/*.min.js)",
+      "Read(**/*.min.css)",
+      "Read(**/*.map)",
+      "Read(**/*.sqlite)",
+      "Read(**/*.db)"
+    ],
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable",
+    "disableAutoMode": "disable"
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com",
+        "*.npmjs.org",
+        "registry.npmjs.org",
+        "pypi.org",
+        "*.pypi.org",
+        "files.pythonhosted.org",
+        "api.anthropic.com",
+        "*.anthropic.com",
+        "*.googleapis.com",
+        "*.google.com",
+        "accounts.google.com",
+        "oauth2.googleapis.com",
+        "ghcr.io"
+      ],
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "denyRead": [
+        "~/.ssh/**",
+        "~/.aws/**",
+        "~/.gnupg/**"
+      ]
+    }
+  },
+  "theme": "auto"
+}

@@ -13,7 +13,7 @@ return {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end,
+        end
     },
     
     -- Mason-LSPConfig: Bridges Mason with the LSP engine
@@ -30,6 +30,7 @@ return {
                     "lua_ls",       -- Lua
                     "matlab_ls",    -- MATLAB
                     "perlnavigator",-- Perl
+                    "qmlls",        -- QML
                     "ruff",         -- Python
                     "tclsp",        -- Tcl
                     "verible",      -- SystemVerilog
@@ -72,6 +73,7 @@ return {
                 },
                 matlab_ls = {},
                 perlnavigator = {},
+                qmlls = {},
                 ruff = {},
                 tclsp = {},
                 verible = {},
@@ -112,6 +114,9 @@ return {
                     
                     opts.desc = "Rename Variable"
                     map('n', '<leader>rn', vim.lsp.buf.rename, opts)
+
+                    opts.desc = "Open Diagnostics"
+                    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 
                     opts.desc = "Previous Diagnostic"
                     map('n', '[d', vim.diagnostic.goto_prev, opts)

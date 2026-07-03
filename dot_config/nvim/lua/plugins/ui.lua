@@ -31,7 +31,19 @@ return {
                     lualine_b = {'branch', 'diff', 'filename'},
                     lualine_c = {'diagnostics'},
                     lualine_x = {'encoding', 'fileformat', 'filesize'},
-                    lualine_y = {'filetype'},
+                    lualine_y = {'filetype', {
+                        'lsp_status',
+                        icon = '',
+                        symbols = {
+                            spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+                            done = '✓',
+                            separator = ' '
+                        },
+                        ignore_lsp = {
+                            'null-ls',
+                        },
+                        show_name = false }
+                    },
                     lualine_z = {'progress', 'location'}
                 },
             })

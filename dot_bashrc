@@ -77,7 +77,6 @@ set -o noclobber
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-
 # Initialize Starship
 eval "$(starship init bash)"
 
