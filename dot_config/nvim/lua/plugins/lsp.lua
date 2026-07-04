@@ -29,10 +29,12 @@ return {
                     "jsonls",       -- JSON
                     "lua_ls",       -- Lua
                     "matlab_ls",    -- MATLAB
+                    "neocmake",     -- CMake
                     "perlnavigator",-- Perl
                     "qmlls",        -- QML
                     "ruff",         -- Python
                     "tclsp",        -- Tcl
+                    "texlab",       -- LaTeX
                     "verible",      -- SystemVerilog
                     "yamlls",       -- YAML
                 },
@@ -72,10 +74,48 @@ return {
                     }
                 },
                 matlab_ls = {},
+                neocmake = {},
                 perlnavigator = {},
                 qmlls = {},
                 ruff = {},
                 tclsp = {},
+                texlab = {
+                    settings = {
+                        {
+                            texlab = {
+                                bibtexFormatter = "texlab",
+                                build = {
+                                    -- Important: Needs to match my custom Makefile
+                                    args = {
+                                        "-xelatex",
+                                        "-interaction=nonstopmode",
+                                        "-file-line-error",
+                                        "-synctex=1",
+                                        "-outdir=build",
+                                        "%f"
+                                    },
+                                    executable = "latexmk",
+                                    outputDirectory = "build",
+                                    forwardSearchAfter = false,
+                                    onSave = false
+                                },
+                                chktex = {
+                                    onEdit = false,
+                                    onOpenAndSave = false
+                                },
+                                diagnosticsDelay = 300,
+                                formatterLineLength = 80,
+                                forwardSearch = {
+                                    args = {}
+                                },
+                                latexFormatter = "latexindent",
+                                latexindent = {
+                                    modifyLineBreaks = false
+                                }
+                            }
+                        }
+                    }
+                },
                 verible = {},
                 yamlls = {
                     settings = {

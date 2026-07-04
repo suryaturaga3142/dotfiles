@@ -1,4 +1,6 @@
 " ~/.vimrc
+"
+" LEGACY: I've shifted to nvim now
 
 " --- Plugins ---
 call plug#begin('~/.vim/plugged')

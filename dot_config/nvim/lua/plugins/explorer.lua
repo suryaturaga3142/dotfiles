@@ -13,6 +13,7 @@ return {
         vim.g.loaded_netrwPlugin = 1
 
         require("nvim-tree").setup({
+            hijack_cursor = true,
             view = {
                 width = 30,
                 side = "left",
@@ -21,12 +22,15 @@ return {
             },
             renderer = {
                 group_empty = true,
+                indent_markers = {
+                    enable = true
+                },
                 icons = {
                     show = {
                         git = true,
                         file = true,
                         folder = true,
-                        folder_arrow = true,
+                        folder_arrow = false,
                     },
                 },
             },

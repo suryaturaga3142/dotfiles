@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles and configs for CachyOS Hyprland. I keep things pretty simple and minimal, nothing fancy. My main priority has been keeping a unified workflow across vim, tmux and hyprland. As someone who spends a very large amount of time on their laptop for work, that's super important to me.
+My dotfiles and configs for CachyOS Hyprland. I keep things pretty simple and minimal, nothing fancy. My main priority has been keeping a unified workflow across nvim, tmux and hyprland. As someone who spends a very large amount of time on their laptop for work, that's super important to me.
 
 I think I've done a good job at the unified workflow aspect. At least, I've come to the point where it's all in my muscle memory now, and I don't really work with any other setup. As we all know how ricing goes, though, this is a constantly evolving repo. We'll see what changes come my way, especially since I'm using Hyprland lol. My scripting (and life enjoyment) has gone up significantly since I kicked Windows out of my life. Interesting feeling to be studying comp arch and OS alongside doing all this.
 
@@ -15,6 +15,7 @@ The best part about using an Arch-based distro with Hyprland is that you have to
 > [!TIP]
 > When creating your own build, it's definitely worth using the help of AI. I'm a basic Gemini user and relied on AI assisted debugging and development a fair amount at the start. Soon enough the vision was in my head and I stopped needing it. AI does help a lot, but more important is reading the tool manuals lol.
 > Regardless, I think it's a new tool one can make use of!
+> I more recently tried Claude Code for Lua. Definitely a good tool.
 
 Building everything like this and setting up distroboxes, ephemeral podmans, and background services did teach me a lot about how my system works. Overcoming challenges like setting up fingerprint auth and a hibernation swapfile were def learning experiences. And the more I learnt, the more I realised what was possible. Ricing is a fun place to spiral down, I do hope I can give back to the open source community someday.
 

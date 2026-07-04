@@ -15,61 +15,48 @@
       "TaskUpdate",
       "mcp__claude_ai__*"
     ],
-    "ask": [
-      "Edit",
-      "Write"
-    ],
     "deny": [
       "Bash",
-
       "Read(~/.ssh/**)",
       "Glob(~/.ssh/**)",
       "Grep(~/.ssh/**)",
       "Edit(~/.ssh/**)",
       "Write(~/.ssh/**)",
-
       "Read(~/.aws/**)",
       "Glob(~/.aws/**)",
       "Grep(~/.aws/**)",
       "Edit(~/.aws/**)",
       "Write(~/.aws/**)",
-
       "Read(~/.gnupg/**)",
       "Glob(~/.gnupg/**)",
       "Grep(~/.gnupg/**)",
       "Edit(~/.gnupg/**)",
       "Write(~/.gnupg/**)",
-
       "Read(**/.git/**)",
       "Glob(**/.git/**)",
       "Grep(**/.git/**)",
       "Edit(**/.git/**)",
       "Write(**/.git/**)",
-
       "Read(**/node_modules/**)",
       "Glob(**/node_modules/**)",
       "Grep(**/node_modules/**)",
       "Edit(**/node_modules/**)",
       "Write(**/node_modules/**)",
-
       "Read(**/.venv/**)",
       "Glob(**/.venv/**)",
       "Grep(**/.venv/**)",
       "Edit(**/.venv/**)",
       "Write(**/.venv/**)",
-
       "Read(**/venv/**)",
       "Glob(**/venv/**)",
       "Grep(**/venv/**)",
       "Edit(**/venv/**)",
       "Write(**/venv/**)",
-
       "Read(**/__pycache__/**)",
       "Glob(**/__pycache__/**)",
       "Grep(**/__pycache__/**)",
       "Edit(**/__pycache__/**)",
       "Write(**/__pycache__/**)",
-
       "Read(**/*-lock.json)",
       "Read(**/package-lock.json)",
       "Read(**/yarn.lock)",
@@ -78,7 +65,6 @@
       "Read(**/poetry.lock)",
       "Read(**/gemfile.lock)",
       "Read(**/flake.lock)",
-
       "Read(**/*.swp)",
       "Read(**/*.swo)",
       "Read(**/*~)",
@@ -87,6 +73,10 @@
       "Read(**/*.map)",
       "Read(**/*.sqlite)",
       "Read(**/*.db)"
+    ],
+    "ask": [
+      "Edit",
+      "Write"
     ],
     "defaultMode": "default",
     "disableBypassPermissionsMode": "disable",
@@ -125,5 +115,7 @@
       ]
     }
   },
-  "theme": "auto"
+  "effortLevel": "high",
+  "theme": "auto",
+  "model": "sonnet"
 }

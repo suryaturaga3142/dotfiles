@@ -12,6 +12,7 @@ return {
     keys = {
         { "<leader>ff", "<cmd>Telescope find_files<CR>",                desc = "Find files" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>",                 desc = "Live grep (rg)" },
+        { "<leader>fG", "<cmd>Telescope git_status<CR>",                desc = "Git Status" },
         { "<leader>fb", "<cmd>Telescope buffers<CR>",                   desc = "Find buffers" },
         { "<leader>fo", "<cmd>Telescope oldfiles<CR>",                  desc = "Recent files" },
         { "<leader>fw", "<cmd>Telescope grep_string<CR>",               desc = "Grep word under cursor" },
@@ -32,6 +33,7 @@ return {
                     horizontal = {
                         prompt_position = "top",
                         preview_width = 0.55,
+                        width = 0.9
                     },
                 },
                 sorting_strategy = "ascending",

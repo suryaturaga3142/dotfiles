@@ -12,8 +12,8 @@ return {
         local map = vim.keymap.set
         local opts = { expr = true, silent = true, replace_keycodes = false }
 
-        map("i", "<C-m>", 'copilot#Accept("<CR>")', opts)
-        map("i", "<C-n>", "<Plug>(copilot-dismiss)", { silent = true } )
+        map("i", "<C-n>", 'copilot#Accept("<CR>")', opts)
+        map("i", "<C-b>", "<Plug>(copilot-dismiss)", { silent = true } )
         map("i", "<M-]>", "<Plug>(copilot-next)", { silent = true } )
         map("i", "<M-[>", "<Plug>(copilot-previous)", { silent = true } )
     end,
