@@ -136,9 +136,10 @@ return {
             end
             
             -- Buffer-local mappings, applied only when an LSP attaches.
-            --   Idiomatic navigation on g... / K / [p ]p.
+            --   Simple usage on E / K / [p ]p
+            --   Goto navigation on g...
             --   Actions grouped under <leader>l...
-            --   Telescope-backed finders join <leader>f... group
+            --   Telescope-backed finders on <leader>f...
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
@@ -151,8 +152,8 @@ return {
                     lmap('gd', vim.lsp.buf.definition, "Go to definition")
                     lmap('gD', vim.lsp.buf.declaration, "Go to declaration")
                     lmap('gi', vim.lsp.buf.implementation, "Go to implementation")
-                    lmap('ge', vim.diagnostic.open_float, "Hover diagnostics float")
-                    lmap('gr', builtin.lsp_references, "References") -- Repeated w Telescope finder below
+                    lmap('gr', builtin.lsp_references, "Find references") -- Repeated w Telescope finder below
+                    lmap('E', vim.diagnostic.open_float, "Hover diagnostics")
                     lmap('K', vim.lsp.buf.hover, "Hover documentation")
                     lmap('[p', function() vim.diagnostic.jump({ count = -1, float = true }) end, "Previous diagnostic")
                     lmap(']p', function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")

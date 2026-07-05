@@ -1,4 +1,4 @@
-format = """$python$username$hostname: $directory$git_branch $git_status\n $character"""
+format = """$cmd_duration$python$username$hostname: $directory$git_branch $git_status\n $character """
 
 [python]
 style = "bold cyan"
@@ -26,6 +26,12 @@ style = "bold yellow"
 format = "([$symbol$branch]($style))"
 
 [character]
-success_symbol = "[\\$](bold white) "
-error_symbol = "[\\$](bold red) "
+success_symbol = "[\\$](bold white)"
+error_symbol = "[\\$](bold red)"
+
+[cmd_duration]
+min_time = 2_000
+format = " 󱦟  [$duration]($style)\n\n"
+style = "bold yellow"
+
 

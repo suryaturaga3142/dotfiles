@@ -1,0 +1,28 @@
+%YAML 1.1
+---
+version: 1
+algorithms:
+  - BlackLevel:
+      black: 3
+  - Awb:
+      # Temporal smoothing factor (0.0 to 1.0). 
+      # 1.0 is instant (hunting/jumping), 0.20 forces slow, smooth color transitions.
+      speed: 0.20
+  - Agc:
+      # Target Mean Sample Value in histogram bins (default is ~2.5).
+      # Lowering to 2.1 slightly darkens target exposure, preventing high-gain pixelation.
+      exposureTarget: 2.1
+      # Deadband around target where no adjustment occurs (default ~0.2).
+      # Widening to 0.40 eliminates exposure jumping and artificial light flickering.
+      hysteresis: 0.40
+      # Step scaling factor (default ~0.04). Lowering slows down adjustment rate.
+      proportionalGain: 0.015
+  - Adjust:
+      # Optional: Slight contrast bump to crush low-light shadow noise
+      contrast: 1.05
+  - Ccm:
+      ccms:
+        - ct: 6500
+          ccm: [ 2.00, -0.75, -0.25,
+                -0.40,  1.35, -0.20,
+                 0.00, -0.60,  1.60 ]

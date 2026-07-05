@@ -78,5 +78,7 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 # Initialize Starship
-eval "$(starship init bash)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
 
