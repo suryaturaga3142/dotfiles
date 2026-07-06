@@ -2,27 +2,54 @@
 ---
 version: 1
 algorithms:
+  # Black level is not specified in the AIQB calibration binary; auto-detected
+  # from the histogram dark end at runtime.
   - BlackLevel:
-      black: 3
   - Awb:
-      # Temporal smoothing factor (0.0 to 1.0). 
-      # 1.0 is instant (hunting/jumping), 0.20 forces slow, smooth color transitions.
+      maxGainR: 2.8
+      maxGainB: 3.5
       speed: 0.20
-  - Agc:
-      # Target Mean Sample Value in histogram bins (default is ~2.5).
-      # Lowering to 2.1 slightly darkens target exposure, preventing high-gain pixelation.
-      exposureTarget: 2.1
-      # Deadband around target where no adjustment occurs (default ~0.2).
-      # Widening to 0.40 eliminates exposure jumping and artificial light flickering.
-      hysteresis: 0.40
-      # Step scaling factor (default ~0.04). Lowering slows down adjustment rate.
-      proportionalGain: 0.015
-  - Adjust:
-      # Optional: Slight contrast bump to crush low-light shadow noise
-      contrast: 1.05
   - Ccm:
       ccms:
+        - ct: 2856
+          ccm: [  1.1248,  0.2210, -0.3458,
+                 -0.4616,  1.7736, -0.3120,
+                 -0.4342, -0.9348,  2.3690 ]
+        - ct: 3000
+          ccm: [  1.5839, -0.4188, -0.1650,
+                 -0.3670,  1.6565, -0.2895,
+                 -0.1213, -1.0442,  2.1655 ]
+        - ct: 3450
+          ccm: [  1.6411, -0.5127, -0.1284,
+                 -0.3680,  1.6337, -0.2657,
+                 -0.1384, -1.0869,  2.2253 ]
+        - ct: 4000
+          ccm: [  1.5414, -0.4024, -0.1390,
+                 -0.3304,  1.6352, -0.3048,
+                 -0.1237, -0.6699,  1.7936 ]
+        - ct: 4150
+          ccm: [  1.7334, -0.6629, -0.0706,
+                 -0.3121,  1.6267, -0.3146,
+                 -0.0920, -0.9183,  2.0103 ]
+        - ct: 5000
+          ccm: [  1.5015, -0.3165, -0.1850,
+                 -0.2277,  1.6190, -0.3913,
+                 -0.0699, -0.7285,  1.7984 ]
         - ct: 6500
-          ccm: [ 2.00, -0.75, -0.25,
-                -0.40,  1.35, -0.20,
-                 0.00, -0.60,  1.60 ]
+          ccm: [  1.8163, -0.7062, -0.1100,
+                 -0.1640,  1.5736, -0.4096,
+                 -0.0084, -0.8294,  1.8378 ]
+        - ct: 7500
+          ccm: [  1.8953, -0.7980, -0.0973,
+                 -0.1539,  1.6001, -0.4462,
+                 -0.0101, -0.7800,  1.7902 ]
+  - Adjust:
+      gamma: 2.2
+      contrast: 1.05
+      saturation: 1.0
+  - Agc:
+      exposureTarget: 2.1
+      hysteresis: 0.7
+      stepDenominator: 20
+      proportionalGain: 0.02
+

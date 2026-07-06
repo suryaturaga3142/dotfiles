@@ -149,22 +149,20 @@ return {
                     end
 
                     -- Navigation
-                    lmap('gd', vim.lsp.buf.definition, "Go to definition")
-                    lmap('gD', vim.lsp.buf.declaration, "Go to declaration")
-                    lmap('gi', vim.lsp.buf.implementation, "Go to implementation")
-                    lmap('gr', builtin.lsp_references, "Find references") -- Repeated w Telescope finder below
                     lmap('E', vim.diagnostic.open_float, "Hover diagnostics")
                     lmap('K', vim.lsp.buf.hover, "Hover documentation")
                     lmap('[p', function() vim.diagnostic.jump({ count = -1, float = true }) end, "Previous diagnostic")
                     lmap(']p', function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")
+                    
+                    -- Gotos
+                    lmap('gd', vim.lsp.buf.definition, "Go to definition")
+                    lmap('gD', vim.lsp.buf.declaration, "Go to declaration")
+                    lmap('gi', vim.lsp.buf.implementation, "Go to implementation")
+                    lmap('gT', vim.lsp.buf.type_definition, "Go to type definition")
 
                     -- LSP action group: <leader>l...
                     lmap('<leader>la', vim.lsp.buf.code_action, "Code action")
                     lmap('<leader>lr', vim.lsp.buf.rename, "Rename symbol")
-                    lmap('<leader>le', vim.diagnostic.open_float, "Line diagnostics")
-                    lmap('<leader>ld', vim.lsp.buf.definition, "Go to definition")
-                    lmap('<leader>li', vim.lsp.buf.implementation, "Go to implementation")
-                    lmap('<leader>lt', vim.lsp.buf.type_definition, "Type definition")
                     lmap('<leader>ls', vim.lsp.buf.signature_help, "Signature help")
                     lmap('<leader>lf', function() vim.lsp.buf.format({ async = true }) end, "Format buffer")
 

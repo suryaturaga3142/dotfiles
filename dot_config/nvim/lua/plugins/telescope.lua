@@ -24,6 +24,8 @@ return {
         { "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Search in buffer" },
     },
     config = function()
+        -- TODO: Make telescope file opening drop into existing file if open
+        -- Refer to tab drop. Should go somewhere in the setup
         local telescope = require("telescope")
         
         telescope.setup({

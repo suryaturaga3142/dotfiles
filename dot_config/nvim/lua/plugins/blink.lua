@@ -87,9 +87,9 @@ return {
             keymap = {
                 preset = 'default',
                 ['<C-n>'] = {},
+                ['<C-y>'] = {},
                 ['<C-p>'] = { 'select_and_accept', 'fallback' },
                 ['<Esc>'] = { 'hide', 'fallback' },
-
             },
 
             -- (Default) Only show the documentation popup when manually triggered
