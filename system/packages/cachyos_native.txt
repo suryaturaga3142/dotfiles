@@ -7,6 +7,7 @@ alsa-utils
 archlinux-xdg-menu
 arm-none-eabi-gcc
 arm-none-eabi-newlib
+asciiquarium
 awesome-terminal-fonts
 awww
 base
@@ -16,12 +17,15 @@ bc
 bear
 biber
 bind
+bitwarden
 blueman
 bluez
 bluez-hid2hci
 bluez-libs
 bluez-obex
 bluez-utils
+breeze
+breeze5
 brightnessctl
 btop
 btrfs-assistant
@@ -46,7 +50,9 @@ cachyos-zsh-config
 cantarell-fonts
 chezmoi
 chwd
+claude-code
 cmake
+cmatrix
 copyq
 cppcheck
 cpupower
@@ -79,8 +85,10 @@ fsarchiver
 fuse2
 fuzzel
 gcovr
+genact
 gimp
 git
+git-lfs
 glances
 gnome-keyring
 graphviz
@@ -138,6 +146,7 @@ lldb
 llvm
 logrotate
 lsb-release
+lshw
 lsscsi
 lvm2
 mako
@@ -155,6 +164,7 @@ mtools
 nano
 nano-syntax-highlighting
 ncdu
+neovim
 net-tools
 netctl
 network-manager-applet
@@ -164,12 +174,16 @@ networkmanager-openvpn
 nfs-utils
 nilfs-utils
 ninja
+nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 nss-mdns
+ntfs-3g
 nvtop
 nwg-look
+obs-studio
 okular
 opencl-mesa
 openconnect
@@ -181,7 +195,10 @@ pamixer
 paraview
 paru
 pavucontrol
+perf
 perl
+perl-file-homedir
+perl-yaml-tiny
 picocom
 pipewire-alsa
 pipewire-libcamera
@@ -206,6 +223,9 @@ qemu-emulators-full
 qemu-full
 qemu-system-riscv
 qemu-user
+qt6-wayland
+qt6ct
+quickshell
 rclone
 rebuild-detector
 reflector
@@ -226,6 +246,7 @@ shelly
 smartmontools
 snapper
 snapshot
+socat
 sof-firmware
 starship
 steam
@@ -241,6 +262,7 @@ texlive-fontsextra
 texlive-meta
 tk
 tmux
+tree-sitter-cli
 ttf-bitstream-vera
 ttf-dejavu
 ttf-fira-sans
@@ -256,6 +278,7 @@ usb_modeswitch
 usbutils
 uwsm
 valgrind
+ventoy-bin
 verilator
 vim
 virt-manager

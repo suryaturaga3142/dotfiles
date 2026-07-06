@@ -26,6 +26,8 @@ return {
                     "basedpyright", -- Python
                     "bashls",       -- Bash
                     "clangd",       -- C / C++
+                    -- "dts_lsp",      -- DeviceTree -- May need this someday for Zephyr RTOS
+                    "ginko_ls",     -- DeviceTree
                     "jsonls",       -- JSON
                     "lua_ls",       -- Lua
                     "matlab_ls",    -- MATLAB
@@ -61,6 +63,8 @@ return {
                 clangd = {
                     cmd = { "clangd", "--background-index", "--offset-encoding=utf-16" }
                 },
+                -- dts_lsp = {},
+                ginko_ls = {},
                 jsonls = {},
                 lua_ls = {
                     settings = {

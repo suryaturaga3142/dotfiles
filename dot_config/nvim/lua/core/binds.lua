@@ -3,8 +3,8 @@
 -- Keybinds unified with Hyprland (see ~/.config/hypr/land/binds.lua)
 -- Hyprland uses SUPER as its modifier, here <leader> (Space) is the analogous.
 
--- <C-hjkl> is left to vim-tmux-navigator for focus; <C-S-hjkl> is intentionally
--- avoided (clashes with <C-l> redraw and terminal emulators).
+-- <C-hjkl> is left to vim-tmux-navigator for focus
+-- <C-S-hjkl> is intentionally avoided (clashes with <C-l> redraw and terminal emulators)
 
 -- Grouping convention (see plugin files):
 --   <leader>f...  Telescope / finders    (telescope.lua, todo.lua, lsp finders)

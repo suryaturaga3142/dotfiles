@@ -1,14 +1,16 @@
 %YAML 1.1
 ---
+# If it works (which it sorta does), don't touch it!
 version: 1
 algorithms:
   # Black level is not specified in the AIQB calibration binary; auto-detected
   # from the histogram dark end at runtime.
   - BlackLevel:
   - Awb:
-      maxGainR: 2.8
-      maxGainB: 3.5
-      speed: 0.20
+      maxGainR: 2.5
+      maxGainG: 1.0
+      maxGainB: 3.2
+      speed: 0.01
   - Ccm:
       ccms:
         - ct: 2856
@@ -45,11 +47,11 @@ algorithms:
                  -0.0101, -0.7800,  1.7902 ]
   - Adjust:
       gamma: 2.2
-      contrast: 1.05
-      saturation: 1.0
+      contrast: 1.02
+      saturation: 1.08
   - Agc:
-      exposureTarget: 2.1
-      hysteresis: 0.7
-      stepDenominator: 20
-      proportionalGain: 0.02
+      exposureTarget: 1.3
+      hysteresis: 0
+      proportionalGain: 0.002
+      integralGain: 0.001
 
