@@ -15,7 +15,7 @@ if prefs.browser == "google-chrome-stable" then
     hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir2))
     hl.bind(prefs.mainMod .. " CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --incognito --profile-directory=" .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --app='https://open.spotify.com' --profile-directory=" .. prefs.browser_dir1))
-elseif prefs.browser == "firefox" then
+elseif prefs.browser == "firefox" or prefs.browser == "zen-browser" then
     hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir2))
     hl.bind(prefs.mainMod .. " + CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --private-window --profile " .. prefs.browser_dir1))

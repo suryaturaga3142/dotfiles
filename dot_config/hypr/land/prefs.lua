@@ -1,13 +1,16 @@
 -- ~/.config/hypr/land/prefs.lua
 
 local home = os.getenv("HOME")
-local s_browser = "firefox"
+local s_browser = "zen-browser"
 
 -- Personal and Work
 local b_dir1, b_dir2
 if s_browser == "firefox" then
     b_dir1 = home .. "/.config/mozilla/firefox/pws40znd.default-release"
     b_dir2 = home .. "/.config/mozilla/firefox/'1JbbuVWh.Profile 1'"
+elseif s_browser == "zen-browser" then
+    b_dir1 = home .. "/.config/zen/'byiae6cg.Default (release)'"
+    b_dir2 = home .. "/.config/zen/rhbogbxh.FourthFrontier"
 elseif s_browser == "google-chrome-stable" then
     b_dir1 = "Default"
     b_dir2 = "'Profile 3'"

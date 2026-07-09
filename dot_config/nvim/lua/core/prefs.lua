@@ -2,6 +2,9 @@
 
 local opt = vim.opt
 
+-- Usage
+-- opt.mouse = ""             -- Disable mouse support
+
 -- UI & Visuals
 opt.number = true          -- Show line numbers
 opt.cursorline = true      -- Highlight current line
