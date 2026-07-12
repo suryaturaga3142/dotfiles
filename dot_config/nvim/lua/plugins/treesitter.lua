@@ -14,9 +14,13 @@ return {
                 "cpp", 
                 "json",
                 "lua", 
+                "make",
                 "python", 
+                "query",
                 "tcl", 
                 "systemverilog", 
+                "vim",
+                "vimdoc",
                 "yaml", 
             },
         })

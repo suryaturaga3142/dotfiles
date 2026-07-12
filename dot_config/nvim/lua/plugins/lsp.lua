@@ -23,6 +23,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = { 
                     "asm_lsp",      -- Assembly
+                    "autotools_ls", -- Makefiles
                     "basedpyright", -- Python
                     "bashls",       -- Bash
                     "clangd",       -- C / C++
@@ -50,6 +51,7 @@ return {
         config = function()
             local servers = {
                 asm_lsp = {},
+                autotools_ls = {},
                 basedpyright = {
                     settings = {
                         basedpyright = {

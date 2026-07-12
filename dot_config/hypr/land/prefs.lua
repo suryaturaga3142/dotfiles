@@ -25,7 +25,8 @@ end
 return {
     mainMod     = "SUPER",
     terminal    = "kitty",
-    ide         = "code",
+    ide         = "zeditor",
+    ide2        = "code",
     fileManager = "dolphin",
     menu        = "fuzzel",
     browser     = s_browser,

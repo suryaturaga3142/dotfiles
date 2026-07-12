@@ -10,7 +10,9 @@ Putting aside tmux for a second (I only use it for persistent sessions in work),
 
 > [!NOTE]
 > Just to give an update. As much as it took me time to setup waybar, I'm happy to say my transition to Quickshell is well underway! It'll be a while before you see any of it here, and for good reason. It's essentially set to replace everything from mako and hyprlock to, of course, waybar. But I'm still learning.
+> 
 > I don't think I'm going to share much before it's ready, though. This is a busy time and I'm going to build slowly.
+> 
 > Fun times!
 
 I'm proud of my waybar, it's sleek and not distracting. Gives me all the info I need and doesn't clutter the bar. Took me a couple days to get right. That and my nvim setup are prob my peak design skills (which may not be saying much). My weak point is the colors for sure, whether it comes to the waybar, notifications, or the whole general experience. I'm colorblind so setting it up right is hard (and lowkey not high priority for me lol).
@@ -19,7 +21,9 @@ The best part about using an Arch-based distro with Hyprland is that you have to
 
 > [!TIP]
 > When creating your own build, it's definitely worth using the help of AI. I'm a basic Gemini user and relied on AI assisted debugging and development a fair amount at the start. Soon enough the vision was in my head and I stopped needing it. AI does help a lot, but more important is reading the tool manuals lol.
+> 
 > Regardless, I think it's a new tool one can make use of! The Linux community is understandably skeptical, but I think it's great help for personal use. It is my strong opinion that resisting AI now is like resisting Google in 2000.
+> 
 > I more recently integrated Copilot and Claude Code into my nvim setup, it's been a game changer for sure.
 
 Building everything like this and setting up distroboxes, ephemeral podmans, and background services did teach me a lot about how my system works. Overcoming challenges like setting up fingerprint auth and a hibernation swapfile were def learning experiences. My biggest challenge was probably putting together an actually stable [yaml file](system/ov10a10.yaml) for my IPU6 camera being used by libcamera. The more I learnt, the more I realised what was possible. Ricing is a fun place to spiral down, I do hope I can give back to the open source community someday.

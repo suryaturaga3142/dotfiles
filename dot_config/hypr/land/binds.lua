@@ -9,12 +9,15 @@ hl.bind(prefs.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("kitty --start-as=fulls
 
 hl.bind(prefs.mainMod .. " + Q", hl.dsp.exec_cmd(prefs.terminal))
 hl.bind(prefs.mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(prefs.ide))
+hl.bind(prefs.mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(prefs.ide2))
 
+-- Chromium based browesers
 if prefs.browser == "google-chrome-stable" then
     hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir2))
     hl.bind(prefs.mainMod .. " CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --incognito --profile-directory=" .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --app='https://open.spotify.com' --profile-directory=" .. prefs.browser_dir1))
+-- Firefox based browsers
 elseif prefs.browser == "firefox" or prefs.browser == "zen-browser" then
     hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir2))
