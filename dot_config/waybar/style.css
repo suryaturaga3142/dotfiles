@@ -90,7 +90,7 @@ window#waybar {
     padding-right: 15px;
 }
 
-#pulseaudio, #bluetooth, #network, #battery, #custom-power_mode {
+#pulseaudio, #bluetooth, #network, #battery {
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -105,12 +105,12 @@ window#waybar {
 }
 
 #custom-power_mode {
-    margin-right: 2px;
-    padding-right: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 #battery {
-    padding-left: 0px;
+    /* padding-left: 0px; */
     padding-right: 15px;
 }
 

@@ -73,6 +73,7 @@ fi
 
 # Enable Vi editing mode
 set -o vi
+
 # Prevent clobbering
 set -o noclobber
 # Fix arrow keys in Vim Insert Mode 

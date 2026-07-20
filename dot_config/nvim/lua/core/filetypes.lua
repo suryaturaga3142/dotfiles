@@ -16,6 +16,11 @@ vim.filetype.add({
 })
 vim.filetype.add({
     extension = {
+        ['core'] = 'yaml',
+    },
+})
+vim.filetype.add({
+    extension = {
         mk = 'make',
     },
     filename = {

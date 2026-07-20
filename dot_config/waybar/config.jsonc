@@ -185,9 +185,9 @@
         "exec": "$HOME/.local/bin/power_status",
         "format": "{text}",
         "tooltip": true,
-        "interval": 5,
-        "on-click": "$HOME/.local/bin/power_cycle",
-        "on-click-right": "$HOME/.local/bin/power_cycle -r"
+        "interval": 5
+        /* "on-click": "$HOME/.local/bin/power_cycle",
+        "on-click-right": "$HOME/.local/bin/power_cycle -r" */
     },
 
     "battery": {

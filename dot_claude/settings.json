@@ -82,6 +82,7 @@
     "disableBypassPermissionsMode": "disable",
     "disableAutoMode": "disable"
   },
+  "model": "sonnet",
   "sandbox": {
     "enabled": true,
     "failIfUnavailable": true,
@@ -115,7 +116,6 @@
       ]
     }
   },
-  "effortLevel": "high",
-  "theme": "auto",
-  "model": "sonnet"
+  "effortLevel": "xhigh",
+  "theme": "auto"
 }

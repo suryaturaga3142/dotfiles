@@ -36,6 +36,7 @@ return {
                     "perlnavigator",-- Perl
                     "qmlls",        -- QML
                     "ruff",         -- Python
+                    "rust_analyzer",-- Rust
                     "tclsp",        -- Tcl
                     "texlab",       -- LaTeX
                     "verible",      -- SystemVerilog
@@ -84,6 +85,7 @@ return {
                 perlnavigator = {},
                 qmlls = {},
                 ruff = {},
+                rust_analyzer = {},
                 tclsp = {},
                 texlab = {
                     settings = {

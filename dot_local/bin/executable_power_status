@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-MODE="$(powerprofilesctl get)"
+# Outdated, used to have performance, balanced, power-saver
+#MODE="$(powerprofilesctl get)"
+MODE=$(auto-cpufreq --get-state)
 
 ICON=""
 COLOR=""
@@ -12,12 +14,12 @@ case "$MODE" in
         COLOR="green"
         FMT="Performance"
         ;;
-    balanced)
+    default)
         ICON="󰾅"
         COLOR="orange"
         FMT="Balanced"
         ;;
-    power-saver)
+    powersave)
         ICON="󰾆"
         COLOR="red"
         FMT="Power Saver"

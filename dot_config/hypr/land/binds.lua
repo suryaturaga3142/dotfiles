@@ -82,8 +82,8 @@ hl.bind(prefs.mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true 
 
 hl.bind(prefs.mainMod .. " + right", hl.dsp.window.resize({x = 20,  y = 0, relative = true}), { repeating = true })
 hl.bind(prefs.mainMod .. " + left",  hl.dsp.window.resize({x = -20, y = 0, relative = true}), { repeating = true })
-hl.bind(prefs.mainMod .. " + up",    hl.dsp.window.resize({x = 0,  y = 20, relative = true}), { repeating = true })
-hl.bind(prefs.mainMod .. " + down",  hl.dsp.window.resize({x = 0, y = -20, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + up",    hl.dsp.window.resize({x = 0, y = -20, relative = true}), { repeating = true })
+hl.bind(prefs.mainMod .. " + down",  hl.dsp.window.resize({x = 0,  y = 20, relative = true}), { repeating = true })
 
 hl.bind(prefs.mainMod .. " + SHIFT + right", hl.dsp.window.move({x = 20,  y = 0, relative = true}), { repeating = true })
 hl.bind(prefs.mainMod .. " + SHIFT + left",  hl.dsp.window.move({x = -20, y = 0, relative = true}), { repeating = true })

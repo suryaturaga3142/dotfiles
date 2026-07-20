@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #browser="google-chrome-stable"
-browser="firefox"
+#browser="firefox"
+browser="zen-browser"
 app="https://outlook.cloud.microsoft/mail/"
 
 case "$1" in
@@ -32,5 +33,6 @@ case "$1" in
 esac
 
 #$browser --app=$app --profile-directory="Default"
-$browser --new-window $app --profile "$HOME/.config/mozilla/firefox/pws40znd.default-release"
+#$browser --new-window $app --profile "$HOME/.config/mozilla/firefox/pws40znd.default-release"
+$browser --new-window $app --profile "$HOME/.config/zen/'byiae6cg.Default (release)'"
 

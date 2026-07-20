@@ -54,6 +54,7 @@ alias g++='g++ -Wall -Wextra -std=c++17'
 alias gcc='gcc -Wall -Wextra'
 alias py='python3'
 alias code.='code .'
+alias nvim='vim'
 alias matlab='/opt/MATLAB/R2026a/bin/matlab'
 alias vivado='/opt/Xilinx/2025.2/Vivado/bin/vivado'
 

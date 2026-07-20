@@ -1,6 +1,7 @@
 -- ~/.config/hypr/land/prefs.lua
 
 local home = os.getenv("HOME")
+-- LOVE IT
 local s_browser = "zen-browser"
 
 -- Personal and Work
