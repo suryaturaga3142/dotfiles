@@ -11,7 +11,7 @@ hl.bind(prefs.mainMod .. " + Q", hl.dsp.exec_cmd(prefs.terminal))
 hl.bind(prefs.mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(prefs.ide))
 hl.bind(prefs.mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(prefs.ide2))
 
--- Chromium based browesers
+-- Chromium based browsers
 if prefs.browser == "google-chrome-stable" then
     hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir1))
     hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir2))

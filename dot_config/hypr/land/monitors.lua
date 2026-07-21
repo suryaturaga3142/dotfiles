@@ -10,7 +10,7 @@ hl.monitor({
 hl.monitor({
     output = "",
     mode = "preferred",
-    position = "auto",
+    position = "auto-center-up",
     scale = 1
 })
 

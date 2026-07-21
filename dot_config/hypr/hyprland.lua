@@ -11,7 +11,7 @@ hl.on("hyprland.start", function ()
     for _, prog in ipairs(prefs.startups) do
         hl.exec_cmd(prog)
     end
-    hl.exec_cmd(prefs.scripts_dir .. "/startup_wallpaper")
+    hl.exec_cmd(prefs.scripts_dir .. "/shuffle_wallpaper")
 end)
 
 hl.env("XCURSOR_SIZE", "24")

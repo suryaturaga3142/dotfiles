@@ -1,18 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#img_dir="$HOME/Pictures/wallpapers/animegirl"
-#img_dir="$HOME/Pictures/wallpapers/animeblack"
-#img_dir="$HOME/Pictures/wallpapers/cyberpunkcycle"
-img_dir="$HOME/Pictures/wallpapers/cyberpunk"
-#img_dir="$HOME/Pictures/wallpapers/city"
-#img_dir="/usr/share/wallpapers"
+pidof awww-daemon >/dev/null || { 
+    awww-daemon & disown
+    sleep 1
+}
 
-IMG=$(find "$img_dir" -type f \( \
-    -iname "*.jpg" -o \
-    -iname "*.jpeg" -o \
-    -iname "*.png" -o \
-    -iname "*.webp" \
-\) | shuf -n 1)
+WALL_DIR="$HOME/Pictures/wallpapers/ldr"
 
-awww img "$IMG" --transition-type fade --transition-duration 3
+if [ ! -d "$WALL_DIR" ]; then
+    echo "Directory $WALL_DIR not found!"
+    exit 1
+fi
+
+mapfile -t SHUFFLED_WALLS < <(find "$WALL_DIR" -type f | shuf)
+NUM_WALLS=${#SHUFFLED_WALLS[@]}
+
+if [ "$NUM_WALLS" -eq 0 ]; then
+    echo "No wallpapers found in $WALL_DIR!"
+    exit 1
+fi
+
+mapfile -t MONITORS < <(awww query | awk -F':' '{print $2}' | tr -d ' ')
+
+INDEX=0
+for monitor in "${MONITORS[@]}"; do
+    SAFE_INDEX=$((INDEX % NUM_WALLS))
+    CURRENT_WALL="${SHUFFLED_WALLS[$SAFE_INDEX]}"
+
+    awww img "$CURRENT_WALL" -o "$monitor" --transition-type fade
+    
+    ((INDEX++))
+done
+
+exit 0
 
