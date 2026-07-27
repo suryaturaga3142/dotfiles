@@ -34,5 +34,5 @@ esac
 
 #$browser --app=$app --profile-directory="Default"
 #$browser --new-window $app --profile "$HOME/.config/mozilla/firefox/pws40znd.default-release"
-$browser --new-window $app --profile "$HOME/.config/zen/'byiae6cg.Default (release)'"
+$browser --new-tab $app --profile "$HOME/.config/zen/byiae6cg.Default (release)"
 

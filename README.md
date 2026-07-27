@@ -15,7 +15,7 @@ Putting aside tmux for a second (I only use it for persistent remote sessions), 
 > 
 > Fun times!
 
-I'm proud of my waybar even if it's soon to be legacy, it's sleek and not distracting. Gives me all the info I need and doesn't clutter the bar. Took me a couple days to get right. That and my nvim setup are prob my peak design skills (which may not be saying much). My weak point is the colors for sure, whether it comes to the waybar, notifications, or the whole general experience. I'm colorblind so setting it up right is hard (and lowkey not high priority for me lol).
+I'm proud of my waybar even if it's soon to be legacy, it's sleek and not distracting. Gives me all the info I need and doesn't clutter the bar. Took me a couple days to get right, gave wayle a shot but didn't really like the look. That and my nvim setup are prob my peak design skills (which may not be saying much). My weak point is the colors for sure, whether it comes to the waybar, notifications, or the whole general experience. I'm colorblind so setting it up right is hard (and lowkey not high priority for me lol).
 
 The best part about using an Arch-based distro with Hyprland is that you have to build pretty much everything. CachyOS gave me a huge advantage of performance upgrades out of the box. I had to then write configs for key binds, color schemes, notifications, wallpapers, app menu, the status bar, etc. Stuff like opening certain applications needed scripts and desktop files. Everything from screenshots to displaying battery and adjusting volume needed scripts! So it did feel like I was doing a good amount of building. The credit for this is definitely shared by CachyOS and Hyprland. Quickshell is about to join and make a goated trio :)
 
