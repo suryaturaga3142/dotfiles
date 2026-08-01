@@ -7,17 +7,25 @@ ignore-timeout=0
 max-visible=5
 sort=-time
 
-width=350
+width=450
 height=150
 margin=12
 padding=12
 border-radius=12
 border-size=2
 
+# Netrunner
+font="JetBrainsMono 11"
+background-color=#121E26
+text-color=#D6E6E8
+border-color=#081014
+progress-color=over #208A91
+
 [urgency=critical]
 anchor=center
 default-timeout=5000
 border-color=#dd0f0f
+background-color=#081014
 
 [app-name=vol_bright_adj]
 anchor=top-center
@@ -37,4 +45,13 @@ on-button-right=dismiss
 width=50
 height=50
 text-alignment=center
+
+[mode=dnd]
+invisible=1
+
+[mode=dnd urgency=critical]
+invisible=0
+
+[mode=dnd app-name=vol_bright_adj]
+invisible=0
 

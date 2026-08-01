@@ -17,62 +17,79 @@
     ],
     "deny": [
       "Bash",
+
       "Read(~/.ssh/**)",
-      "Glob(~/.ssh/**)",
-      "Grep(~/.ssh/**)",
       "Edit(~/.ssh/**)",
-      "Write(~/.ssh/**)",
+
       "Read(~/.aws/**)",
-      "Glob(~/.aws/**)",
-      "Grep(~/.aws/**)",
       "Edit(~/.aws/**)",
-      "Write(~/.aws/**)",
+
       "Read(~/.gnupg/**)",
-      "Glob(~/.gnupg/**)",
-      "Grep(~/.gnupg/**)",
       "Edit(~/.gnupg/**)",
-      "Write(~/.gnupg/**)",
+
       "Read(**/.git/**)",
-      "Glob(**/.git/**)",
-      "Grep(**/.git/**)",
       "Edit(**/.git/**)",
-      "Write(**/.git/**)",
+
       "Read(**/node_modules/**)",
-      "Glob(**/node_modules/**)",
-      "Grep(**/node_modules/**)",
       "Edit(**/node_modules/**)",
-      "Write(**/node_modules/**)",
+
       "Read(**/.venv/**)",
-      "Glob(**/.venv/**)",
-      "Grep(**/.venv/**)",
       "Edit(**/.venv/**)",
-      "Write(**/.venv/**)",
+
       "Read(**/venv/**)",
-      "Glob(**/venv/**)",
-      "Grep(**/venv/**)",
       "Edit(**/venv/**)",
-      "Write(**/venv/**)",
+
       "Read(**/__pycache__/**)",
-      "Glob(**/__pycache__/**)",
-      "Grep(**/__pycache__/**)",
       "Edit(**/__pycache__/**)",
-      "Write(**/__pycache__/**)",
+
       "Read(**/*-lock.json)",
+      "Edit(**/*-lock.json)",
+
       "Read(**/package-lock.json)",
+      "Edit(**/package-lock.json)",
+
       "Read(**/yarn.lock)",
+      "Edit(**/yarn.lock)",
+
       "Read(**/pnpm-lock.yaml)",
+      "Edit(**/pnpm-lock.yaml)",
+
       "Read(**/Cargo.lock)",
+      "Edit(**/Cargo.lock)",
+
       "Read(**/poetry.lock)",
+      "Edit(**/poetry.lock)",
+
       "Read(**/gemfile.lock)",
+      "Edit(**/gemfile.lock)",
+
       "Read(**/flake.lock)",
+      "Edit(**/flake.lock)",
+
       "Read(**/*.swp)",
+      "Edit(**/*.swp)",
+
       "Read(**/*.swo)",
+      "Edit(**/*.swo)",
+
       "Read(**/*~)",
+      "Edit(**/*~)",
+
       "Read(**/*.min.js)",
+      "Edit(**/*.min.js)",
+
       "Read(**/*.min.css)",
+      "Edit(**/*.min.css)",
+
       "Read(**/*.map)",
+      "Edit(**/*.map)",
+
       "Read(**/*.sqlite)",
-      "Read(**/*.db)"
+      "Edit(**/*.sqlite)",
+
+      "Read(**/*.db)",
+      "Edit(**/*.db)"
+
     ],
     "ask": [
       "Edit",

@@ -21,4 +21,3 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 require("land.configs")
 require("land.windows")
-

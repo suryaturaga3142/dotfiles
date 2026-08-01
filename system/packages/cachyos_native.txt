@@ -1,304 +1,319 @@
-accountsservice
-adobe-source-serif-fonts
-alacritty
-alsa-firmware
-alsa-plugins
-alsa-utils
-archlinux-xdg-menu
-arm-none-eabi-gcc
-arm-none-eabi-newlib
-asciiquarium
-awesome-terminal-fonts
-awww
-base
-base-devel
-bash-completion
-bc
-bear
-biber
-bind
-bitwarden
-blueman
-bluez
-bluez-hid2hci
-bluez-libs
-bluez-obex
-bluez-utils
-breeze
-breeze5
-brightnessctl
-btop
-btrfs-assistant
-btrfs-progs
-cachyos-fish-config
-cachyos-hello
-cachyos-hooks
-cachyos-kernel-manager
-cachyos-keyring
-cachyos-micro-settings
-cachyos-mirrorlist
-cachyos-packageinstaller
-cachyos-plymouth-bootanimation
-cachyos-plymouth-theme
-cachyos-rate-mirrors
-cachyos-settings
-cachyos-snapper-support
-cachyos-v3-mirrorlist
-cachyos-v4-mirrorlist
-cachyos-wallpapers
-cachyos-zsh-config
-cantarell-fonts
-chezmoi
-chwd
-claude-code
-cmake
-cmatrix
-copyq
-cppcheck
-cpupower
-cryptsetup
-device-mapper
-dfu-util
-diffutils
-distrobox
-dmidecode
-dmraid
-dnsmasq
-dolphin
-dos2unix
-dosfstools
-downgrade
-duf
-e2fsprogs
-efibootmgr
-efitools
-ethtool
-exfatprogs
-f2fs-tools
-fastfetch
-ffmpegthumbnailer
-filelight
-firefox
-fprintd
-freecad
-fsarchiver
-fuse2
-fuzzel
-gcovr
-genact
-gimp
-git
-git-lfs
-glances
-gnome-keyring
-graphviz
-gst-libav
-gst-plugin-libcamera
-gst-plugin-pipewire
-gst-plugin-va
-gst-plugins-bad
-gst-plugins-ugly
-gtk2
-gtkwave
-hdparm
-hwdetect
-hwinfo
-hypridle
-hyprland
-hyprlauncher
-hyprlock
-hyprpaper
-hyprshot
-inetutils
-intel-gpu-tools
-intel-lpmd
-intel-media-driver
-intel-ucode
-ipython
-iverilog
-iwd
-jfsutils
-jre21-openjdk
-kicad
-kitty
-lcov
-less
-lib32-mesa
-lib32-opencl-mesa
-lib32-vulkan-intel
-libcamera
-libcamera-ipa
-libcamera-tools
-libdvdcss
-libfido2
-libgsf
-libopenraw
-libvirt
-limine
-limine-mkinitcpio-hook
-limine-snapper-sync
-linux-cachyos
-linux-cachyos-headers
-linux-cachyos-lts
-linux-cachyos-lts-headers
-linux-firmware
-lldb
-llvm
-logrotate
-lsb-release
-lshw
-lsscsi
-lvm2
-mako
-man-db
-man-pages
-mdadm
-meld
-mesa-utils
-meson
-micro
-minicom
-mkinitcpio
-modemmanager
-mtools
-nano
-nano-syntax-highlighting
-ncdu
-neovim
-net-tools
-netctl
-network-manager-applet
-networkmanager
-networkmanager-openconnect
-networkmanager-openvpn
-nfs-utils
-nilfs-utils
-ninja
-nodejs
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-npm
-nss-mdns
-ntfs-3g
-nvtop
-nwg-look
-obs-studio
-okular
-opencl-mesa
-openconnect
-openocd
-openssh
-os-prober
-pacman-contrib
-pamixer
-paraview
-paru
-pavucontrol
-perf
-perl
-perl-file-homedir
-perl-yaml-tiny
-picocom
-pipewire-alsa
-pipewire-libcamera
-pipewire-pulse
-pkgfile
-playerctl
-plocate
-plymouth
-podman
-polkit-kde-agent
-poppler-glib
-power-profiles-daemon
-pv
-python
-python-defusedxml
-python-packaging
-python-pip
-python-pytest
-python-virtualenv
-qalculate-gtk
-qemu-emulators-full
-qemu-full
-qemu-system-riscv
-qemu-user
-qt6-wayland
-qt6ct
-quickshell
-rclone
-rebuild-detector
-reflector
-ripgrep
-riscv64-elf-binutils
-riscv64-elf-gcc
-riscv64-linux-gnu-binutils
-riscv64-linux-gnu-gcc
-riscv64-linux-gnu-gdb
-rlwrap
-rsync
-s-nail
-screen
-sddm
-seahorse
-sg3_utils
-shelly
-smartmontools
-snapper
-snapshot
-socat
-sof-firmware
-starship
-steam
-stlink
-sudo
-swaync
-sxiv
-sysfsutils
-sysstat
-texinfo
-texlive-binextra
-texlive-fontsextra
-texlive-meta
-tk
-tmux
-tree-sitter-cli
-ttf-bitstream-vera
-ttf-dejavu
-ttf-fira-sans
-ttf-jetbrains-mono-nerd
-ttf-liberation
-ttf-meslo-nerd
-ttf-opensans
-ufw
-ufw-extras
-unrar
-unzip
-usb_modeswitch
-usbutils
-uwsm
-valgrind
-ventoy-bin
-verilator
-vim
-virt-manager
-vlc-plugins-all
-vpl-gpu-rt
-vulkan-intel
-waybar
-waypaper
-wev
-wget
-which
-wireplumber
-wl-clipboard
-wofi
-wpa_supplicant
-xdg-desktop-portal-hyprland
-xdg-user-dirs
-xfsprogs
-xl2tpd
-xorg-xhost
-xorg-xlsclients
-xorg-xwayland
-yosys
+accountsservice 26.27.3-1.1
+adobe-source-serif-fonts 4.005-2
+alacritty 0.17.0-1.2
+alsa-firmware 1.2.4-4
+alsa-plugins 1:1.2.12-5.1
+alsa-utils 1.2.16-1.1
+archlinux-xdg-menu 0.7.7-1
+arm-none-eabi-gcc 16.1.0-1.1
+arm-none-eabi-newlib 4.6.0.20260123-1
+asciiquarium 1.1-7
+auto-cpufreq 3.1.0-1
+awesome-terminal-fonts 1.1.0-5
+awww 0.12.1-1.1
+base 3-3
+base-devel 1-2
+bash-completion 2.18.0-1
+bc 1.08.2-1.1
+bear 4.1.5-1.1
+biber 1:2.21-3
+bind 9.20.26-1.1
+bitwarden 2026.3.1-2.1
+bloaty 1.1-26.1
+blueman 2.4.6-2.1
+bluez 5.87-2.1
+bluez-hid2hci 5.87-2.1
+bluez-libs 5.87-2.1
+bluez-obex 5.87-2.1
+bluez-utils 5.87-2.1
+breeze 6.7.3-1.1
+breeze5 6.7.3-1.1
+brightnessctl 0.5.1-3
+btop 1.4.7-1.1
+btrfs-assistant 2.2-5.1
+btrfs-progs 7.1-1
+cachyos-fish-config 16-1
+cachyos-hello 0.26.0-1
+cachyos-hooks 2026.02.05-1
+cachyos-kernel-manager 1.19.0-1
+cachyos-keyring 20240331-1
+cachyos-micro-settings 1.0.0-1
+cachyos-mirrorlist 27-1
+cachyos-packageinstaller 1.6.2-1
+cachyos-plymouth-bootanimation 2-3
+cachyos-plymouth-theme 1-1
+cachyos-rate-mirrors 23-3
+cachyos-settings 1:1.3.5-2
+cachyos-snapper-support 1.0.2-1
+cachyos-v3-mirrorlist 27-1
+cachyos-v4-mirrorlist 27-1
+cachyos-wallpapers r23.964263e-1
+cachyos-zsh-config 1.0.3-1
+cantarell-fonts 1:0.311-1
+cava 0.10.7-1.1
+chezmoi 2.71.1-1
+chwd 1.24.1-1
+claude-code 2.1.220-1
+cmake 4.4.2-1.1
+cmatrix 2.0-4.1
+compsize 1.5-2.1
+copyq 16.0.0-1.1
+cppcheck 2.21.1-1.1
+cpupower 7.1.5-1
+cryptsetup 2.8.7-1.1
+cups 2:2.4.19-1
+cups-filters 2.0.1-2.1
+darktable 2:5.6.0-5.1
+device-mapper 2.03.41-1.1
+dfu-util 0.11-3.1
+diffutils 3.12-2.1
+distrobox 1.8.2.5-1
+dmidecode 3.7-1
+dmraid 1.0.0.rc16.3-15.1
+dnsmasq 2.93-1.1
+dolphin 26.04.3-1.1
+dos2unix 7.5.6-1.1
+dosfstools 4.2-5.1
+downgrade 12.0.2-1
+duf 0.9.1-1.1
+e2fsprogs 1.47.4-1.1
+efibootmgr 18-4.1
+efitools 1.9.2-7.1
+ethtool 1:7.1-1.1
+exfatprogs 1.4.2-1.1
+f2fs-tools 1.16.0-3.1
+fastfetch 2.66.0-1.1
+ffmpegthumbnailer 2.3.0-1.1
+filelight 26.04.3-1.1
+firefox 153.0.1-1
+fprintd 1.94.5-2.1
+freecad 1.1.3-1
+fsarchiver 0.8.9-1.1
+fuse2 2.9.9-5
+fuzzel 1.14.1-1.1
+gammaray 3.4.0-3.1
+gcovr 8.6-1
+genact 1.5.1-2.1
+gimp 3.2.4-2.1
+git 2.55.0-1.1
+git-lfs 3.7.1-1.1
+glances 4.5.5-1
+gnome-keyring 1:50.0-1.1
+graphviz 15.1.0-1
+gst-libav 1.28.5-4.1
+gst-plugin-libcamera 0.7.2-3.1
+gst-plugin-pipewire 1:1.6.8-1.1
+gst-plugin-va 1.28.5-4.1
+gst-plugins-bad 1.28.5-4.1
+gst-plugins-ugly 1.28.5-4.1
+gtk2 2.24.33-5
+gtkwave 3.3.128-1.1
+hdparm 9.65-3.1
+heaptrack 1.5.0-10.1
+hwdetect 2025.08.16.1333-1
+hwinfo 25.4-1.1
+hypridle 0.1.8-1.1
+hyprland 0.56.1-2.1
+hyprlauncher 0.1.6-7.1
+hyprlock 0.9.6-1.1
+hyprpaper 0.8.4-5.1
+hyprshot 1.3.0-4
+inetutils 2.8-1.1
+intel-gpu-tools 2.5-1
+intel-lpmd 0.1.0-7
+intel-media-driver 26.2.4-1.1
+intel-ucode 20260512-1
+ipython 9.15.0-2
+iverilog 13.0-1.1
+iwd 3.12-1.1
+jfsutils 1.1.15-9.1
+jre21-openjdk 21.0.12.u8-2
+kicad 10.0.5-1.1
+kitty 0.48.1-1.1
+kvantum 1.1.8-1.1
+lcov 2.5-1
+less 1:704-1.1
+lib32-mesa 3:26.1.6-1
+lib32-opencl-mesa 3:26.1.6-1
+lib32-vulkan-intel 3:26.1.6-1
+libcamera 0.7.2-3.1
+libcamera-ipa 0.7.2-3.1
+libcamera-tools 0.7.2-3.1
+libdvdcss 1.6.0-1.1
+libfido2 1.17.0-1.1
+libgsf 1.14.58-1.1
+libopenraw 0.3.7-2.1
+libvirt 1:12.5.0-1.1
+limine 12.5.2-1
+limine-mkinitcpio-hook 1.37.1-1
+limine-snapper-sync 1.31.0-1
+linux-cachyos 7.1.5-1
+linux-cachyos-headers 7.1.5-1
+linux-cachyos-lts 6.18.40-1
+linux-cachyos-lts-headers 6.18.40-1
+linux-firmware 1:20260622-1
+lldb 22.1.8-1.1
+llvm 22.1.8-2
+logrotate 3.22.0-1.1
+lsb-release 2.0.r55.a25a4fc-1
+lshw B.02.20-3.1
+lsscsi 0.32-2.2
+lvm2 2.03.41-1.1
+mako 1.11.0-1.1
+man-db 2.13.1-2.1
+man-pages 6.18-1
+mdadm 4.6-2
+meld 3.24.0-1
+mesa-utils 9.0.0-7.1
+meson 1.11.2-1
+micro 2.0.15-3.1
+minicom 2.11.1-3.1
+mkinitcpio 41-5
+modemmanager 1.24.2-1.1
+mtools 1:4.0.49-1.1
+nano 9.1-1.1
+nano-syntax-highlighting 2025.07.01.r0.g256995b-2
+ncdu 2.9.2-1.1
+neovim 0.12.4-1.1
+net-tools 2.10-3.1
+netctl 1.29-2
+network-manager-applet 1.36.0-2.1
+networkmanager 1.58.0-1
+networkmanager-openconnect 1.2.10-4.1
+networkmanager-openvpn 1.12.5-1.1
+nfs-utils 2.9.2-1.1
+nilfs-utils 2.3.0-1.1
+ninja 1.13.2-3.1
+nodejs 26.4.0-2
+noto-fonts 1:2026.08.01-1
+noto-fonts-cjk 20240730-1
+noto-fonts-emoji 1:2.051-1
+npm 12.0.1-1
+nss-mdns 0.15.1-2.1
+ntfs-3g 2026.7.7-1.1
+nvtop 3.3.2-1.1
+nwg-look 1.1.1-3.1
+obs-studio 32.1.2-7.1
+okular 26.04.3-1.1
+opencl-mesa 3:26.1.6-1
+openconnect 1:9.21-1.1
+openocd 1:0.12.0-5.1
+openssh 10.4p1-3.1
+os-prober 1.84-1.1
+pacman-contrib 1.13.1-1.2
+pamixer 1.6-4.1
+paraview 6.1.1-4.1
+paru 2.1.0-3
+pavucontrol 1:6.2-1.1
+perf 7.1.5-1
+perl 5.42.2-1.1
+perl-file-homedir 1.006-8
+perl-yaml-tiny 1.76-3
+picocom 3.1-3.1
+pipewire-alsa 1:1.6.8-1.1
+pipewire-libcamera 1:1.6.8-1.1
+pipewire-pulse 1:1.6.8-1.1
+pkgfile 25-2.1
+playerctl 2.4.1-5.1
+plocate 1.1.24-1.1
+plymouth 26.134.222-2.1
+podman 6.0.2-3.1
+polkit-kde-agent 6.7.3-1.1
+poppler-glib 26.07.0-1.1
+power-profiles-daemon 0.30-3
+print-manager 1:6.7.3-1.1
+pv 1.11.0-1.1
+python 3.14.6-2
+python-defusedxml 0.7.1-8
+python-packaging 26.2-1
+python-pip 26.1.2-1
+python-pytest 1:9.0.3-1
+python-virtualenv 21.7.1-1
+qalculate-gtk 5.12.0-1.1
+qemu-emulators-full 11.0.3-1
+qemu-full 11.0.3-1
+qemu-system-riscv 11.0.3-1
+qemu-user 11.0.3-1
+qt6-wayland 6.11.1-1.1
+qt6ct 0.11-7.1
+quickshell 0.3.0-2.1
+rclone 1.75.0-1.1
+rebuild-detector 4.4.5-1
+reflector 2023-5
+ripgrep 15.2.0-1
+riscv64-elf-binutils 2.45.1-1.1
+riscv64-elf-gcc 15.2.0-1.1
+riscv64-linux-gnu-binutils 2.44-2.1
+riscv64-linux-gnu-gcc 15.1.0-2.1
+riscv64-linux-gnu-gdb 17.2-1.1
+rlwrap 0.48-1.1
+rsync 3.4.4-1.1
+rustup 1.29.0-2.1
+s-nail 14.9.25-1.1
+screen 5.0.2-1.1
+sddm 0.21.0-8
+seahorse 1:47.0.1-6
+sg3_utils 1.48-1.2
+shelly 3.0.1+1-2
+smartmontools 7.5-1.1
+snapper 0.13.1-2.1
+snapshot 50.0-1.1
+socat 1.8.1.3-1.1
+sof-firmware 2025.12.2-1
+starship 1.26.0-1
+steam 1.0.0.86-2
+stlink 1.8.0.r121.g8c34a4e-1.1
+sudo 1.9.17.p2-6.1
+swaync 0.12.6-1.1
+sxiv 26-2.1
+sysfsutils 2.1.1-2.2
+sysstat 12.7.9-1.1
+texinfo 7.3-1.1
+texlive-binextra 2026.1-1
+texlive-fontsextra 2026.1-1
+texlive-meta 2026.1-1
+tk 8.6.16-1.1
+tmux 3.7_b-1.1
+tree-sitter-cli 0.26.9-1.1
+ttf-bitstream-vera 1.10-16
+ttf-dejavu 2.37+18+g9b5d1b2f-8
+ttf-fira-sans 1:4.301-3
+ttf-jetbrains-mono-nerd 3.4.0-2
+ttf-liberation 2.1.5-2
+ttf-meslo-nerd 3.4.0-2
+ttf-opensans 3.003-1
+ufw 0.36.2-7
+ufw-extras 1.3.0-1
+unrar 1:7.2.7-1.1
+unzip 6.0-23.1
+usb_modeswitch 2.6.2.20251207-1.1
+usbutils 019-1.1
+uwsm 0.26.6-1
+valgrind 3.25.1-7.1
+ventoy-bin 1.1.17-1
+verilator 5.050-1.1
+vim 9.2.0849-1.1
+virt-manager 5.1.0-4
+vlc-plugins-all 3.0.23_2-9.1
+vpl-gpu-rt 26.2.4-1.1
+vulkan-intel 3:26.1.6-1
+waybar 0.15.0-2.1
+waypaper 2.8-1
+wev 1.1.0-1.1
+wget 1.25.0-6.1
+which 2.25-1.1
+wireplumber 0.5.15-1.1
+wl-clipboard 1:2.3.0-1.1
+wlogout 1.2.2-0
+wofi 1.5.3-1.1
+wpa_supplicant 2:2.11-5.1
+xdg-desktop-portal-hyprland 1.4.1-1.1
+xdg-user-dirs 0.20-1.1
+xfsprogs 7.1.1-1.1
+xl2tpd 1.3.20-1.1
+xorg-xhost 1.0.10-1.2
+xorg-xlsclients 1.1.6-1.1
+xorg-xwayland 24.1.13-1.1
+yosys 0.66-1.1
+zed 1.13.1-1
+zen-browser-bin 1.21.9b-1

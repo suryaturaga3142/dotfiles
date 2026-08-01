@@ -11,14 +11,14 @@ hl.window_rule({
     float = true,
     center = true
 })
+]]
 
--- Brightspace Login
+-- Picture-in-Picture players
 hl.window_rule({
-    match = { class = "google-chrome", title = "Login - Purdue University System - Google Chrome" },
+    match = { title = "Picture-in-Picture" },
     float = true,
     center = true
 })
-]]
 
 -- STM32CubeMX
 hl.window_rule({
