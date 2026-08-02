@@ -1,23 +1,17 @@
--- ~/.config/hypr/hyprland.lua
+-- CachyOS Hyprland Configuration
 
-local prefs = require("land.prefs")
-require("land.binds")
-require("land.animations")
-require("land.inputs")
-require("land.monitors")
+require("config.animations")
+require("config.autostart")
+require("config.colors")
+require("config.decorations")
+require("config.variables")
+require("config.environment")
+require("config.inputs")
+require("config.binds")
+require("config.misc")
+require("config.monitors")
+require("config.windowrules")
+require("config.workspaces")
 
--- Autostart
-hl.on("hyprland.start", function ()
-    for _, prog in ipairs(prefs.startups) do
-        hl.exec_cmd(prog)
-    end
-    hl.exec_cmd(prefs.scripts_dir .. "/shuffle_wallpaper")
-end)
-
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("QT_QPA_PLATFORM", "wayland")
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
-
-require("land.configs")
-require("land.windows")
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
