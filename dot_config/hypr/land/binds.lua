@@ -2,7 +2,7 @@
 
 local prefs = require("land.prefs")
 
-local closeWindowBind = hl.bind(prefs.mainMod .. " + C", hl.dsp.window.close())
+hl.bind(prefs.mainMod .. " + C", hl.dsp.window.close())
 
 hl.bind(prefs.mainMod .. " + M", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(prefs.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("kitty --start-as=fullscreen -e sh -c 'sleep 1 && unimatrix'"))
@@ -11,38 +11,22 @@ hl.bind(prefs.mainMod .. " + Q", hl.dsp.exec_cmd(prefs.terminal))
 hl.bind(prefs.mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(prefs.ide))
 hl.bind(prefs.mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(prefs.ide2))
 
--- Chromium based browsers
-if prefs.browser == "google-chrome-stable" then
-    hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir1))
-    hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile-directory=" .. prefs.browser_dir2))
-    hl.bind(prefs.mainMod .. " CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --incognito --profile-directory=" .. prefs.browser_dir1))
-    hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --app='https://open.spotify.com' --profile-directory=" .. prefs.browser_dir1))
--- Firefox based browsers
-elseif prefs.browser == "firefox" or prefs.browser == "zen-browser" then
-    hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir1))
-    hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir2))
-    hl.bind(prefs.mainMod .. " + CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --private-tab --profile " .. prefs.browser_dir1))
-    hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --new-tab 'https://open.spotify.com' --profile " .. prefs.browser_dir1))
-end
-
-hl.bind(prefs.mainMod .. " + E", hl.dsp.exec_cmd("snapshot"))
-hl.bind(prefs.mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("gimp"))
-
-hl.bind(prefs.mainMod .. " + A", hl.dsp.exec_cmd(prefs.menu))
 hl.bind(prefs.mainMod .. " + S", hl.dsp.exec_cmd(prefs.fileManager))
-hl.bind(prefs.mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("filelight"))
+hl.bind(prefs.mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(prefs.fileAnalyzer))
 
--- prefs.mainMod + D -> spotify in browser section
-hl.bind(prefs.mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(prefs.terminal .. " -e spotatui"))
-
-hl.bind(prefs.mainMod .. " + V", hl.dsp.exec_cmd("copyq menu"))
-hl.bind(prefs.mainMod .. " + B", hl.dsp.exec_cmd(prefs.scripts_dir .. "/shuffle_wallpaper"))
-
+-- Browser
+hl.bind(prefs.mainMod .. " + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir1))
+hl.bind(prefs.mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(prefs.browser .. " --profile " .. prefs.browser_dir2))
+hl.bind(prefs.mainMod .. " + CTRL + W", hl.dsp.exec_cmd(prefs.browser .. " --private-window --profile " .. prefs.browser_dir1))
+hl.bind(prefs.mainMod .. " + D", hl.dsp.exec_cmd(prefs.browser .. " --new-tab 'https://open.spotify.com' --profile " .. prefs.browser_dir1))
 
 hl.bind(prefs.mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(prefs.mainMod .. " + SHIFT + T", hl.dsp.window.pseudo())
 hl.bind(prefs.mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(prefs.mainMod .. " + Y", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+hl.bind("ALT + Tab", hl.dsp.window.cycle_next())
+hl.bind(prefs.mainMod .. " + Tab",   hl.dsp.exec_cmd(prefs.noctCall .. "window-switcher"))
 
 -- Move focus
 hl.bind(prefs.mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -90,29 +74,40 @@ hl.bind(prefs.mainMod .. " + SHIFT + left",  hl.dsp.window.move({x = -20, y = 0,
 hl.bind(prefs.mainMod .. " + SHIFT + up",    hl.dsp.window.move({x = 0, y = -20, relative = true}), { repeating = true })
 hl.bind(prefs.mainMod .. " + SHIFT + down",  hl.dsp.window.move({x = 0,  y = 20, relative = true}), { repeating = true })
 
--- Laptop multimedia keys and controls
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness vol_up"),      { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness vol_down"),    { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness vol_mute"),    { locked = true })
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness bright_up"),   { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd(prefs.scripts_dir .. "/volume_brightness bright_down"), { locked = true, repeating = true })
---hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pamixer -i 5"),      { locked = true, repeating = true })
---hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pamixer -d 5"),    { locked = true, repeating = true })
---hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("pamixer -t"),    { locked = true })
---hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl set +5%"),   { locked = true, repeating = true })
---hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),        { locked = true })
-hl.bind("XF86AudioPlay",        hl.dsp.exec_cmd("playerctl play-pause"),                                { locked = true })
-hl.bind("XF86AudioPause",       hl.dsp.exec_cmd("playerctl play-pause"),                                { locked = true })
-hl.bind("XF86AudioNext",        hl.dsp.exec_cmd("playerctl next"),                                      { locked = true })
-hl.bind("XF86AudioPrev",        hl.dsp.exec_cmd("playerctl previous"),                                  { locked = true })
+-- Audio
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(prefs.noctCall .. "volume-up"),   { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(prefs.noctCall .. "volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute",        hl.dsp.exec_cmd(prefs.noctCall .. "volume-mute"), { locked = true })
+hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd(prefs.noctCall .. "mic-mute"),    { locked = true })
 
-hl.bind(prefs.mainMod .. " + CTRL + right", hl.dsp.exec_cmd("playerctl next"),        { locked = true })
-hl.bind(prefs.mainMod .. " + CTRL + left",  hl.dsp.exec_cmd("playerctl previous"),    { locked = true })
-hl.bind(prefs.mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("playerctl play-pause"),  { locked = true })
-hl.bind(prefs.mainMod .. " + CTRL + up",    hl.dsp.exec_cmd("playerctl position 5+"), { locked = true, repeating = true })
-hl.bind(prefs.mainMod .. " + CTRL + down",  hl.dsp.exec_cmd("playerctl position 5-"), { locked = true, repeating = true })
+-- Media
+hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd(prefs.noctCall .. "media toggle"),   { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd(prefs.noctCall .. "media toggle"),   { locked = true })
+hl.bind("XF86AudioNext",  hl.dsp.exec_cmd(prefs.noctCall .. "media next"),     { locked = true })
+hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd(prefs.noctCall .. "media previous"), { locked = true })
 
-hl.bind("Print", hl.dsp.exec_cmd(prefs.scripts_dir .. "/screenshot_menu"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd(prefs.scripts_dir .. "/screenshot_delay"))
+hl.bind(prefs.mainMod .. " + CTRL + right", hl.dsp.exec_cmd(prefs.noctCall .. "media next"),        { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + left",  hl.dsp.exec_cmd(prefs.noctCall .. "media previous"),    { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd(prefs.noctCall .. "media toggle"),  { locked = true })
+hl.bind(prefs.mainMod .. " + CTRL + up",    hl.dsp.exec_cmd(prefs.noctCall .. "media next-player"),  { locked = true, repeating = true })
+hl.bind(prefs.mainMod .. " + CTRL + down",  hl.dsp.exec_cmd(prefs.noctCall .. "media previous-player"), { locked = true, repeating = true })
+
+-- Brightness
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd(prefs.noctCall .. "brightness-up"),   { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(prefs.noctCall .. "brightness-down"), { locked = true, repeating = true })
+
+-- Utilities
+hl.bind(prefs.mainMod .. " + E", hl.dsp.exec_cmd("snapshot"))
+hl.bind(prefs.mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("gimp"))
+hl.bind(prefs.mainMod .. " + P",     hl.dsp.exec_cmd("hyprpicker -a -n"))
+
+-- Noctalia Utilities
+hl.bind(prefs.mainMod .. " + V", hl.dsp.exec_cmd(prefs.noctCall .. "panel-toggle clipboard"))
+hl.bind(prefs.mainMod .. " + B", hl.dsp.exec_cmd(prefs.noctCall .. "panel-toggle wallpaper"))
+hl.bind(prefs.mainMod .. " + A", hl.dsp.exec_cmd(prefs.noctCall .. "panel-toggle launcher"))
+hl.bind(prefs.mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(prefs.noctCall .. "panel-toggle control-center notifications"))
+
+-- Screen Capture
+hl.bind("Print",               hl.dsp.exec_cmd(prefs.noctCall .. "screenshot-region"))
+hl.bind(prefs.mainMod .. " + Print", hl.dsp.exec_cmd(prefs.noctCall .. "screenshot-fullscreen"))
 

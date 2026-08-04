@@ -2,19 +2,18 @@
 
 local home = os.getenv("HOME")
 -- LOVE IT
-local s_browser = "zen-browser"
+local browser = "zen-browser"
+
+local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
 
 -- Personal and Work
 local b_dir1, b_dir2
-if s_browser == "firefox" then
-    b_dir1 = home .. "/.config/mozilla/firefox/pws40znd.default-release"
-    b_dir2 = home .. "/.config/mozilla/firefox/'1JbbuVWh.Profile 1'"
-elseif s_browser == "zen-browser" then
-    b_dir1 = home .. "/.config/zen/'byiae6cg.Default (release)'"
-    b_dir2 = home .. "/.config/zen/rhbogbxh.FourthFrontier"
-elseif s_browser == "google-chrome-stable" then
-    b_dir1 = "Default"
-    b_dir2 = "'Profile 3'"
+if browser == "firefox" then
+    b_dir1 = ""
+    b_dir2 = ""
+elseif browser == "zen-browser" then
+    b_dir1 = home .. "/.config/zen/'2kujsd7d.Default (release)'"
+    b_dir2 = home .. "/.config/zen/cl09041n.FourthFrontier"
 else
     b_dir1 = ""
     b_dir2 = ""
@@ -24,26 +23,25 @@ end
 -- local startup_wallpaper = scr_dir .. "/startup_wallpaper"
 
 return {
-    mainMod     = "SUPER",
-    terminal    = "kitty",
-    ide         = "zeditor",
-    ide2        = "code",
-    fileManager = "dolphin",
-    menu        = "fuzzel",
-    browser     = s_browser,
+    mainMod      = "SUPER",
+    noctCall     = "noctalia msg ",
+    launchPrefix = launchPrefix,
 
-    scripts_dir = home .. "/.local/bin",
+    terminal     = "kitty",
+    ide          = "zeditor",
+    ide2         = "code",
 
+    fileManager  = "dolphin",
+    fileAnalyzer = "filelight",
+    perfAnalyzer = "btop",
+
+    scripts_dir  = home .. "/.local/bin",
+
+    browser      = browser,
     browser_dir1 = b_dir1,
     browser_dir2 = b_dir2,
 
-    startups    = {
-        "hypridle",
-        "blueman-applet",
-        "waybar",
-        "mako",
-        "awww-daemon",
-        "copyq"
-    }
+    mon1         = "eDP-1"
+
 }
 

@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=xdg-open
-MimeType=image/jpeg;
-Name=xdg-open
-NoDisplay=true
-Type=Application

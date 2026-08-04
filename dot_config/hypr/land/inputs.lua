@@ -2,10 +2,9 @@
 
 hl.config({
     input = {
-        kb_layout = "us",
-        
-        follow_mouse = 1,
         sensitivity = 0,
+
+        accel_profile = "flat",
 
         left_handed = true,
         scroll_method = "on_button_down",
@@ -35,6 +34,13 @@ hl.gesture({
     fingers = 3,
     direction = "down",
     action = "float"
+})
+
+hl.gesture({
+    workspace_swipe = true,
+    fingers = 4,
+    direction = "horizontal",
+    action = "workspace"
 })
 
 hl.gesture({ 
