@@ -35,7 +35,9 @@ Hope you like it! Look below for pics of my desktop.
 
 ### Latest
 
-Coming soon!
+![Walkthrough](imgs/walkthrough.gif)
+<br/>
+*Walkthrough of my current setup*
 
 ### Legacy
 
