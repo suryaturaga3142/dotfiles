@@ -53,8 +53,8 @@ hl.bind(prefs.mainMod .. " + Z",         hl.dsp.workspace.toggle_special("magic"
 hl.bind(prefs.mainMod .. " + SHIFT + Z", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces
-hl.bind(prefs.mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(prefs.mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(prefs.mainMod .. " + mouse_down",   hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(prefs.mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(prefs.mainMod .. " + period",   hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(prefs.mainMod .. " + comma",    hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(prefs.mainMod .. " + SHIFT + period",   hl.dsp.window.move({ workspace = "e+1" }))
@@ -110,4 +110,23 @@ hl.bind(prefs.mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(prefs.noctCall .. "pane
 -- Screen Capture
 hl.bind("Print",               hl.dsp.exec_cmd(prefs.noctCall .. "screenshot-region"))
 hl.bind(prefs.mainMod .. " + Print", hl.dsp.exec_cmd(prefs.noctCall .. "screenshot-fullscreen"))
+
+-- Toggle Window Swallowing
+hl.bind(prefs.mainMod .. " + SHIFT + Y", function ()
+    local swallow_enabled = hl.get_config("misc.enable_swallow")
+
+    if swallow_enabled then
+        -- If it's on, turn it off
+        hl.config({
+            misc = { enable_swallow = false }
+        })
+        hl.exec_cmd("notify-send -t 1500 'Hyprland' 'Window Swallow: Disabled' -a 'hyprctl' -e")
+    else
+        -- If it's off, turn it back on
+        hl.config({
+            misc = { enable_swallow = true }
+        })
+        hl.exec_cmd("notify-send -t 1500 'Hyprland' 'Window Swallow: Enabled' -a 'hyprctl' -e")
+    end
+end)
 

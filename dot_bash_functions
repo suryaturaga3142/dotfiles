@@ -11,6 +11,14 @@ mkcd() {
     cd "$1" || return 1
 }
 
+# Sync to OneDrive
+syncup () {
+    echo -e "\nSyncing Documents..."
+    rclone bisync $HOME/Documents onedrive-personal:linux-cachyos/Documents -P
+    echo -e "\nSyncing Pictures..."
+    rclone bisync $HOME/Pictures onedrive-personal:linux-cachyos/Pictures -P
+}
+
 # Universal Extractor
 extract() {
     if [ -f "$1" ] ; then
@@ -65,6 +73,26 @@ sshhelp() {
     echo -e "   ${B_CYAN}ssh337${NC}     ECE33700    337mg300"
     echo -e "   ${B_CYAN}ssh437${NC}     ECE43700    437mg105"
     echo ""
+}
+
+# Setup tmux workspace
+mytmux () {
+    local session="work"
+    local tab0="def"
+    local mtabs=("alt" "mon" "syn")
+    if [ -n "$TMUX" ]; then
+        echo "Already in a tmux session. Detach and try again."
+        return 1
+    fi
+    if tmux has-session -t $session 2>/dev/null; then
+        tmux attach -t $session
+        return 0
+    fi
+    tmux new-session -d -s $session -n $tab0
+    for tab_name in ${mtabs[@]}; do
+        tmux new-window -t $session -n $tab_name
+    done
+    tmux attach -t "$session:$tab0"
 }
 
 # Conda manager
@@ -286,14 +314,6 @@ vm () {
     unset -f show_usage
 }
 
-# Sync to OneDrive
-syncup () {
-    echo -e "\nSyncing Documents..."
-    rclone bisync $HOME/Documents onedrive:linux-cachyos/Documents -P
-    echo -e "\nSyncing Pictures..."
-    rclone bisync $HOME/Pictures onedrive:linux-cachyos/Pictures -P
-}
-
 # Add todo tree settings
 newtodo() {
     local template="$HOME/stuff/templates/todo_basic.json"
@@ -332,26 +352,6 @@ newtodo() {
 
         echo -e "${GREEN}Success! Todo Tree settings injected into ${YELLOW}$target_file${NC}."
     fi
-}
-
-# Setup tmux workspace
-mytmux () {
-    local session="work"
-    local tab0="def"
-    local mtabs=("alt" "mon" "syn")
-    if [ -n "$TMUX" ]; then
-        echo "Already in a tmux session. Detach and try again."
-        return 1
-    fi
-    if tmux has-session -t $session 2>/dev/null; then
-        tmux attach -t $session
-        return 0
-    fi
-    tmux new-session -d -s $session -n $tab0
-    for tab_name in ${mtabs[@]}; do
-        tmux new-window -t $session -n $tab_name
-    done
-    tmux attach -t "$session:$tab0"
 }
 
 # Vim cheat sheet

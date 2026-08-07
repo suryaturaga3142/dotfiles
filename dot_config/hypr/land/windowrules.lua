@@ -96,6 +96,14 @@ hl.window_rule({
     },
 })
 
+-- Calculator
+hl.window_rule({
+    match = { class = "org.gnome.Calculator" },
+    float = true,
+    center = true,
+    size = { 700, 616 }
+})
+
 -- Opacity Overrides
 local terminals = "^(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)$"
 

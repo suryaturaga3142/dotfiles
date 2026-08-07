@@ -1,18 +1,3 @@
-2048-tui
-archlinux-java-run
-browsh-bin
-cbonsai
-cpuid
-fxload
-google-chrome
-jlink-software-and-documentation
-kalker-bin
-lib32-libpng12
-nrf-udev
-pipes.sh
-qimgv
-serial-studio-bin
-spotatui
-tio
-unimatrix-git
-visual-studio-code-bin
+qimgv 1:1.0.3alpha-1
+tio 3.9-1
+visual-studio-code-bin 1.131.0-1
