@@ -27,23 +27,24 @@ return {
                     "basedpyright", -- Python
                     "bashls",       -- Bash
                     "clangd",       -- C / C++
-                    -- "dts_lsp",      -- DeviceTree -- May need this someday for Zephyr RTOS
-                    "ginko_ls",     -- DeviceTree
+                    -- "jdtls",        -- Java
                     "jsonls",       -- JSON
                     "lua_ls",       -- Lua
-                    "matlab_ls",    -- MATLAB
                     "neocmake",     -- CMake
-                    "perlnavigator",-- Perl
-                    "qmlls",        -- QML
                     "ruff",         -- Python
                     "rust_analyzer",-- Rust
                     "tclsp",        -- Tcl
-                    "texlab",       -- LaTeX
                     "verible",      -- SystemVerilog
                     "yamlls",       -- YAML
                 },
             })
         end,
+    },
+
+    -- Java LSP better off as separate
+    {
+        "mfussenegger/nvim-jdtls",
+        ft = "java",
     },
     
     -- LSP Configuration
@@ -66,8 +67,6 @@ return {
                 clangd = {
                     cmd = { "clangd", "--background-index", "--offset-encoding=utf-16" }
                 },
-                -- dts_lsp = {},
-                ginko_ls = {},
                 jsonls = {},
                 lua_ls = {
                     settings = {
@@ -80,50 +79,10 @@ return {
                         }
                     }
                 },
-                matlab_ls = {},
                 neocmake = {},
-                perlnavigator = {},
-                qmlls = {},
                 ruff = {},
                 rust_analyzer = {},
                 tclsp = {},
-                texlab = {
-                    settings = {
-                        {
-                            texlab = {
-                                bibtexFormatter = "texlab",
-                                build = {
-                                    -- Important: Needs to match my custom Makefile
-                                    args = {
-                                        "-xelatex",
-                                        "-interaction=nonstopmode",
-                                        "-file-line-error",
-                                        "-synctex=1",
-                                        "-outdir=build",
-                                        "%f"
-                                    },
-                                    executable = "latexmk",
-                                    outputDirectory = "build",
-                                    forwardSearchAfter = false,
-                                    onSave = false
-                                },
-                                chktex = {
-                                    onEdit = false,
-                                    onOpenAndSave = false
-                                },
-                                diagnosticsDelay = 300,
-                                formatterLineLength = 80,
-                                forwardSearch = {
-                                    args = {}
-                                },
-                                latexFormatter = "latexindent",
-                                latexindent = {
-                                    modifyLineBreaks = false
-                                }
-                            }
-                        }
-                    }
-                },
                 verible = {},
                 yamlls = {
                     settings = {
@@ -147,11 +106,11 @@ return {
             --   Simple usage on E / K / [p ]p
             --   Goto navigation on g...
             --   Actions grouped under <leader>l...
-            --   Telescope-backed finders on <leader>f...
+            --   Snacks-backed finders on <leader>f...
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
-                    local builtin = require("telescope.builtin")
+                    -- local builtin = require("telescope.builtin")
                     local function lmap(lhs, rhs, desc)
                         vim.keymap.set('n', lhs, rhs, { buffer = ev.buf, silent = true, desc = desc })
                     end
@@ -175,10 +134,18 @@ return {
                     lmap('<leader>lf', function() vim.lsp.buf.format({ async = true }) end, "Format buffer")
 
                     -- LSP-backed Telescope finders: <leader>f...
-                    lmap('<leader>fr', builtin.lsp_references, "Find references")
-                    lmap('<leader>fs', builtin.lsp_document_symbols, "Document symbols")
-                    lmap('<leader>fS', builtin.lsp_dynamic_workspace_symbols, "Workspace symbols")
-                    lmap('<leader>fi', builtin.lsp_implementations, "Find implementations")
+                    -- lmap('<leader>fr', builtin.lsp_references, "Find references")
+                    -- lmap('<leader>fs', builtin.lsp_document_symbols, "Document symbols")
+                    -- lmap('<leader>fS', builtin.lsp_dynamic_workspace_symbols, "Workspace symbols")
+                    -- lmap('<leader>fi', builtin.lsp_implementations, "Find implementations")
+
+                    -- LSP-backed Snacks finders: <leader>f...
+                    lmap('<leader>fr', function() Snacks.picker.lsp_references() end, "Find references")
+                    lmap('<leader>fs', function() Snacks.picker.lsp_symbols() end, "Document symbols")
+                    lmap('<leader>fS', function() Snacks.picker.lsp_workspace_symbols() end, "Workspace symbols")
+                    lmap('<leader>fi', function() Snacks.picker.lsp_implementations() end, "Find implementations")
+                    lmap('<leader>fI', vim.lsp.buf.incoming_calls, "Incoming calls")
+                    lmap('<leader>fO', vim.lsp.buf.outgoing_calls, "Outgoing calls")
                 end,
             })
         end,

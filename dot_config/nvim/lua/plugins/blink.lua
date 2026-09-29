@@ -24,9 +24,9 @@ return {
                 desc = 'Toggle , at eol',
             },
 
-            -- tree
-            { '<leader>s', '<cmd>BlinkTree toggle-focus<cr>', desc = 'File tree (blink)' },
-            { '<leader>S', '<cmd>BlinkTree reveal<cr>', desc = 'Reveal current file in blink tree' },
+            -- tree (I got snacks bro)
+            -- { '<leader>s', '<cmd>BlinkTree toggle-focus<cr>', desc = 'File tree (blink)' },
+            -- { '<leader>S', '<cmd>BlinkTree reveal<cr>', desc = 'Reveal current file in blink tree' },
         },
         -- all modules handle lazy loading internally
         lazy = false,
