@@ -2,6 +2,13 @@
 
 return {
 
+    -- For Java
+    {
+        "mfussenegger/nvim-jdtls",
+        lazy = true, -- Loaded automatically by the ftplugin
+        ft = "java",
+    },
+
     -- For YAML and JSON
     {
         "b0o/SchemaStore.nvim",
@@ -27,7 +34,7 @@ return {
                     "basedpyright", -- Python
                     "bashls",       -- Bash
                     "clangd",       -- C / C++
-                    -- "jdtls",        -- Java
+                    "jdtls",        -- Java
                     "jsonls",       -- JSON
                     "lua_ls",       -- Lua
                     "neocmake",     -- CMake
@@ -37,16 +44,13 @@ return {
                     "verible",      -- SystemVerilog
                     "yamlls",       -- YAML
                 },
+                automatic_enable = {
+                    exclude = { "jdtls" }, -- nvim-jdtls
+                },
             })
         end,
     },
 
-    -- Java LSP better off as separate
-    {
-        "mfussenegger/nvim-jdtls",
-        ft = "java",
-    },
-    
     -- LSP Configuration
     {
         "neovim/nvim-lspconfig",
@@ -101,7 +105,7 @@ return {
                 vim.lsp.config(server, custom_config)
                 vim.lsp.enable(server)
             end
-            
+
             -- Buffer-local mappings, applied only when an LSP attaches.
             --   Simple usage on E / K / [p ]p
             --   Goto navigation on g...

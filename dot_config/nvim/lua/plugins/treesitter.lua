@@ -14,6 +14,7 @@ return {
                 "c", 
                 "cpp",
                 "doxygen",
+                "java",
                 "json",
                 "latex",
                 "lua", 

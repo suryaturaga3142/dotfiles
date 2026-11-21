@@ -1,47 +1,14 @@
--- ~/.config/hypr/land/configs.lua
+-- ~/.config/hypr/land/windowrules.lua
 
 -- Run hyprctl clients to see the stuff to match
 -- Pay attention to initialClass and initialTitle tho,
 -- has to match those bc those are on startup
 
 -- Generic floating position
-hl.window_rule({ match = { float = true }, center = true, persistent_size = true })
-
--- Picture-in-Picture
 hl.window_rule({
-    match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-    float             = true,
-    keep_aspect_ratio = true,
-    size              = { "max(monitor_w, monitor_h)*0.25", "min(monitor_w, monitor_h)*0.25" },
-    pin               = true,
-})
-
--- STM32CubeMX
-hl.window_rule({
-    match = { class = "com-st-microxplorer-maingui-STM32CubeMX" },
-    float = true,
-    center = true
-})
-
--- Qalculate GTK
-hl.window_rule({
-    match = { class = "qalculate-gtk" },
-    float = true,
-    center = true
-})
-
--- nRF Connect Power Profiler
-hl.window_rule({
-    match = { class = "nrfconnect", title = "Power Profiler.*" },
-    float = true,
-    center = true
-})
-
-
--- GIMP main window (needs allowance in below suppression rule)
-hl.window_rule({
-  match      = { class = "gimp", title = "GNU.*" },
-  fullscreen = true
+    match = { float = true }, 
+    center = true, 
+    persistent_size = true 
 })
 
 -- Gaming
@@ -74,15 +41,36 @@ hl.window_rule({
     fullscreen       = false,
     fullscreen_state = 0,
 })
+hl.window_rule({
+    match = {
+        class = "^(steam)$",
+        title = "^(Steam Settings)$",
+    },
+    center           = true,
+    float            = true,
+    fullscreen       = false,
+    fullscreen_state = 0,
+})
 
 -- Apps
 hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, center = true, fullscreen_state = 0 })
 hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true })
-hl.window_rule({ match = { class = "^(.*[Cc]alc.*)$" }, float = true, size = { "max(monitor_w, monitor_h)*0.17", "min(monitor_w, monitor_h)*0.43" } })
 hl.window_rule({ match = { class = "^(org\\.kde\\.keditfiletype)$" }, float = true })
-hl.window_rule({ match = { class = "^(org\\.kde\\.ark)$" }, size = { "max(monitor_w, monitor_h)*0.40", "min(monitor_w, monitor_h)*0.40" } })
-hl.window_rule({ match = { class = "^(.*satty.*)$", title = "^(Satty)$" }, min_size = { "max(monitor_w, monitor_h)*0.35", "min(monitor_w, monitor_h)*0.35" }, float = true })
-hl.window_rule({ match = { class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = { "monitor_w*0.70", "monitor_h*0.70" } })
+hl.window_rule({ 
+    match = { class = "^(org\\.kde\\.ark)$" }, 
+    size = { "max(monitor_w, monitor_h)*0.40", "min(monitor_w, monitor_h)*0.40" } 
+})
+hl.window_rule({ 
+    match = { class = "^(.*swash)$", title = "^(Swash)$" }, 
+    min_size = { "max(monitor_w, monitor_h)*0.35", "min(monitor_w, monitor_h)*0.35" }, 
+    float = true 
+})
+hl.window_rule({ 
+    match = { class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, 
+    float = true, 
+    size = { "monitor_w*0.70", "monitor_h*0.70" } 
+})
+
 hl.window_rule({
     match = {
         class = "^(org\\.kde\\.dolphin)$",
@@ -91,17 +79,9 @@ hl.window_rule({
     float = true,
     size = { "max(monitor_w, monitor_h)*0.50", "min(monitor_w, monitor_h)*0.55" },
     move = {
-        "max(20, min(cursor_x - (window_w*0.50), monitor_w - window_w + 20))", -- X axis clamping
-        "max(20, min(cursor_y - 50, monitor_h - window_h + 20))" -- Y axis clamping
+        "max(20, min(cursor_x - (window_w*0.50), monitor_w - window_w - 20))", -- X axis clamping
+        "max(50, min(cursor_y - 50, monitor_h - window_h - 20))" -- Y axis clamping
     },
-})
-
--- Calculator
-hl.window_rule({
-    match = { class = "org.gnome.Calculator" },
-    float = true,
-    center = true,
-    size = { 700, 616 }
 })
 
 -- Opacity Overrides
@@ -110,6 +90,11 @@ local terminals = "^(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]
 hl.window_rule({ match = { class = "^(firefox|zen)$" }, opacity = "1.0 override" })
 hl.window_rule({ match = { class = terminals }, opacity = "1.0 override" }) -- Override opacity in favor of terminal settings for opacity. If your terminal doesn't support transparency, you can remove this rule.
 hl.window_rule({ match = { class = "^(mpv|org.kde.haruna|.*plex.*|org\\.kde\\.gwenview|.*vlc.*)$" }, opacity = "1.0 override" })
+
+hl.window_rule({ match = { class = "^(qimgv)$" }, opacity = "1.0 override" })
+
+hl.window_rule({ match = { class = "^(.*libreoffice.*)$" }, opacity = "1.0 override" })
+hl.window_rule({ match = { class = "^(.*darktable.*)$" }, opacity = "1.0 override" })
 
 -- Float Utility Windows
 local floatApps = {
@@ -153,5 +138,94 @@ hl.window_rule({
     },
 
     no_focus = true,
+})
+
+-- Noctalia layer rule
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
+})
+
+-- Picture-in-Picture
+hl.window_rule({
+    match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+    float             = true,
+    keep_aspect_ratio = true,
+    size              = { "max(monitor_w, monitor_h)*0.25", "min(monitor_w, monitor_h)*0.25" },
+    pin               = true,
+    move = {
+        "monitor_w - window_w - 20",
+        "monitor_h - window_h - 20"
+    },
+})
+
+-- Qalculate GTK
+hl.window_rule({
+    match = { class = "qalculate-gtk" },
+    float = true,
+    center = true
+})
+
+-- Gnome Calculator
+hl.window_rule({
+    match = { class = "org.gnome.Calculator" },
+    float = true,
+    center = true,
+    size = { 700, 616 }
+})
+
+
+-- GIMP main window (needs allowance in suppression rule)
+hl.window_rule({
+  match      = { class = "gimp", title = "GNU.*" },
+  fullscreen = true
+})
+
+-- Okular pdf viewer
+hl.window_rule({
+    match = { class = ".*okular.*" },
+    float = true,
+    pin = true,
+})
+
+-- Virtuoso
+hl.window_rule({
+    match = { class = ".*virtuoso.*" },
+    opacity = "1.0 override",
+    float = true,
+    center = false,
+    move = {
+        "max(20, min(cursor_x - 20, monitor_w - window_w - 20))", -- X axis clamping
+        "max(50, min(cursor_y - 50, monitor_h - window_h - 20))" -- Y axis clamping
+    },
+})
+hl.window_rule({
+    match = { class = "^(virtuoso)$", title = ".*Schematic Editor.*" },
+    float = true,
+    center = false,
+    size = { "max(monitor_w, monitor_h)*0.7", "min(monitor_w, monitor_h)*0.7" },
+    move = { "20", "50" },
+})
+
+-- Questasim
+hl.window_rule({
+    match = { class = "^([Vv]sim)$", title = "^([Vv]sim)$" },
+    float = true,
+    center = true,
+})
+hl.window_rule({
+    match = { title = "^(mtiBalloon)$", xwayland = true },
+    float = true,
+    center = false,
+    move = {
+        "max(20, min(cursor_x, monitor_w - window_w - 20))", -- X axis clamping
+        "max(50, min(cursor_y, monitor_h - window_h - 20))" -- Y axis clamping
+    },
 })
 

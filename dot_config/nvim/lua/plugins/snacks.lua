@@ -25,6 +25,13 @@ return {
                     filename_first = true, -- Easier to read deeply nested paths
                 }
             },
+            sources = {
+                explorer = { 
+                    files = { cmd = "rg" },
+                    auto_close = true,
+                    jump = { close = true, focus = true },
+                },
+            },
         },
         scratch = { enabled = true },  -- Persistent scratchpads
         terminal = { enabled = true }, -- Floating terminal

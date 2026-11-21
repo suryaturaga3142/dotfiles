@@ -6,92 +6,92 @@
       "Glob",
       "Grep",
       "WebSearch",
-      "WebFetch",
       "TaskCreate",
       "TaskGet",
       "TaskList",
       "TaskOutput",
       "TaskStop",
       "TaskUpdate",
-      "mcp__claude_ai__*"
+      "mcp__claude_ai__*",
+      "WebFetch(domain:docs.zephyrproject.org)",
+      "WebFetch(domain:docs.python.org)",
+      "WebFetch(domain:doc.rust-lang.org)",
+      "WebFetch(domain:docs.rs)",
+      "WebFetch(domain:crates.io)",
+      "WebFetch(domain:docs.rust-embedded.org)",
+      "WebFetch(domain:embassy.dev)",
+      "WebFetch(domain:docs.embassy.dev)",
+      "WebFetch(domain:probe.rs)",
+      "WebFetch(domain:en.cppreference.com)",
+      "WebFetch(domain:www.gem5.org)",
+      "WebFetch(domain:gem5.googlesource.com)",
+      "WebFetch(domain:www.raspberrypi.com)",
+      "WebFetch(domain:datasheets.raspberrypi.com)",
+      "WebFetch(domain:developer.arm.com)",
+      "WebFetch(domain:man7.org)",
+      "WebFetch(domain:gcc.gnu.org)",
+      "WebFetch(domain:sourceware.org)",
+      "WebFetch(domain:llvm.org)",
+      "WebFetch(domain:cmake.org)",
+      "WebFetch(domain:docs.kernel.org)",
+      "WebFetch(domain:devicetree-specification.readthedocs.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:*.stackoverflow.com)",
+      "WebFetch(domain:*.stackexchange.com)",
+      "WebFetch(domain:*.superuser.com)"
     ],
     "deny": [
-      "Bash",
-
+      "Bash(sudo *)",
+      "Bash(su *)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
+      "Bash(nc *)",
+      "Bash(dd *)",
+      "Bash(mkfs*)",
+      "Bash(rm -rf *)",
       "Read(~/.ssh/**)",
       "Edit(~/.ssh/**)",
-
       "Read(~/.aws/**)",
       "Edit(~/.aws/**)",
-
       "Read(~/.gnupg/**)",
       "Edit(~/.gnupg/**)",
-
+      "Read(~/.netrc)",
+      "Read(~/.npmrc)",
+      "Read(~/.pypirc)",
+      "Read(~/.cargo/credentials*)",
+      "Read(~/.config/gh/**)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
       "Read(**/.git/**)",
       "Edit(**/.git/**)",
-
       "Read(**/node_modules/**)",
       "Edit(**/node_modules/**)",
-
       "Read(**/.venv/**)",
       "Edit(**/.venv/**)",
-
       "Read(**/venv/**)",
       "Edit(**/venv/**)",
-
       "Read(**/__pycache__/**)",
       "Edit(**/__pycache__/**)",
-
-      "Read(**/*-lock.json)",
       "Edit(**/*-lock.json)",
-
-      "Read(**/package-lock.json)",
       "Edit(**/package-lock.json)",
-
-      "Read(**/yarn.lock)",
       "Edit(**/yarn.lock)",
-
-      "Read(**/pnpm-lock.yaml)",
       "Edit(**/pnpm-lock.yaml)",
-
-      "Read(**/Cargo.lock)",
       "Edit(**/Cargo.lock)",
-
-      "Read(**/poetry.lock)",
       "Edit(**/poetry.lock)",
-
-      "Read(**/gemfile.lock)",
-      "Edit(**/gemfile.lock)",
-
-      "Read(**/flake.lock)",
+      "Edit(**/Gemfile.lock)",
       "Edit(**/flake.lock)",
-
-      "Read(**/*.swp)",
-      "Edit(**/*.swp)",
-
-      "Read(**/*.swo)",
-      "Edit(**/*.swo)",
-
-      "Read(**/*~)",
-      "Edit(**/*~)",
-
-      "Read(**/*.min.js)",
       "Edit(**/*.min.js)",
-
-      "Read(**/*.min.css)",
       "Edit(**/*.min.css)",
-
-      "Read(**/*.map)",
-      "Edit(**/*.map)",
-
-      "Read(**/*.sqlite)",
       "Edit(**/*.sqlite)",
-
-      "Read(**/*.db)",
-      "Edit(**/*.db)"
-
+      "Edit(**/*.db)",
+      "Edit(**/*.swp)",
+      "Edit(**/*~)",
+      "Edit(.claude/**)"
     ],
     "ask": [
+      "Bash",
       "Edit",
       "Write"
     ],
@@ -110,18 +110,18 @@
         "github.com",
         "*.github.com",
         "*.githubusercontent.com",
-        "*.npmjs.org",
-        "registry.npmjs.org",
+        "ghcr.io",
+        "crates.io",
+        "*.crates.io",
+        "static.rust-lang.org",
         "pypi.org",
         "*.pypi.org",
         "files.pythonhosted.org",
+        "registry.npmjs.org",
+        "*.npmjs.org",
+        "gem5.googlesource.com",
         "api.anthropic.com",
-        "*.anthropic.com",
-        "*.googleapis.com",
-        "*.google.com",
-        "accounts.google.com",
-        "oauth2.googleapis.com",
-        "ghcr.io"
+        "*.anthropic.com"
       ],
       "allowLocalBinding": true
     },
@@ -129,10 +129,20 @@
       "denyRead": [
         "~/.ssh/**",
         "~/.aws/**",
-        "~/.gnupg/**"
+        "~/.gnupg/**",
+        "~/.netrc",
+        "~/.config/gh/**"
       ]
     }
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "theme": "auto"
 }

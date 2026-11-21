@@ -9,14 +9,14 @@ local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empt
 -- Personal and Work
 local b_dir1, b_dir2
 if browser == "firefox" then
-    b_dir1 = ""
-    b_dir2 = ""
+    b_dir1 = home .. "/.config/mozilla/firefox/xpv5jqwp.default-release"
+    b_dir2 = b_dir1
 elseif browser == "zen-browser" then
-    b_dir1 = home .. "/.config/zen/'2kujsd7d.Default (release)'"
-    b_dir2 = home .. "/.config/zen/cl09041n.FourthFrontier"
+    b_dir1 = home .. "/.config/zen/'938jml0n.Default (release)'"
+    b_dir2 = b_dir1
 else
     b_dir1 = ""
-    b_dir2 = ""
+    b_dir2 = b_dir1
 end
 
 -- local scr_dir = home .. ".local/bin"
@@ -34,6 +34,7 @@ return {
     fileManager  = "dolphin",
     fileAnalyzer = "filelight",
     perfAnalyzer = "btop",
+    calculator   = "gnome-calculator",
 
     scripts_dir  = home .. "/.local/bin",
 
@@ -41,7 +42,8 @@ return {
     browser_dir1 = b_dir1,
     browser_dir2 = b_dir2,
 
-    mon1         = "eDP-1"
+    mon1         = "eDP-1",
+    mon2         = "DP-2"
 
 }
 

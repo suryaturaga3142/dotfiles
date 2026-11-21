@@ -1,3 +1,6 @@
+nrfutil 8.2.0-1
 qimgv 1:1.0.3alpha-1
 tio 3.9-1
-visual-studio-code-bin 1.131.0-1
+ttf-ms-fonts 2.0-12
+unimatrix-git r103.dff519f-1
+visual-studio-code-bin 1.144.0-1

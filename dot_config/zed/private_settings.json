@@ -7,12 +7,40 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "turagas_ececomp",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/shay/a/turagas/stuff"
+          ]
+        },
+        {
+          "paths": [
+            "/home/shay/a/turagas/stuff/bats"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "my_raspberry_pi",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/surya/.config/nvim"
+          ]
+        }
+      ]
+    }
+  ],
   "agent_servers": {
     "claude-acp": {
       "type": "registry"
     }
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
   "agent": {
     "dock": "right",
     "favorite_models": [],
@@ -21,17 +49,15 @@
   "git_panel": {
     "dock": "left"
   },
-  "outline_panel": {
-    "dock": "left"
-  },
   "project_panel": {
     "dock": "left"
   },
-  "vim_mode": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "icon_theme": "Catppuccin Mocha",
   "edit_predictions": {
     "provider": "copilot"
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 13.0,
   "theme": {
